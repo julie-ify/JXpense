@@ -31,6 +31,10 @@ development:
   # the same name as the operating system user running Rails.
   #username: Budget_app
 
+  host: localhost
+  username: postgres
+  port: 5432
+
   # The password associated with the postgres role (username).
   #password:
 
