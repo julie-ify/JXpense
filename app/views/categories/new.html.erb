@@ -1,0 +1,16 @@
+<section>
+  <nav>
+    <ul class="nav justify-content-center bg-light text-white">
+      <li class="nav-item">
+        <%= link_to categories_path do %>
+          <i class="fas fa-chevron-left"></i>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button" %>
+      </li>
+    </ul>
+  </nav>
+  <h1> CREATE CATEGORY</h1>
+  <%= render "form" %>
+</section>
