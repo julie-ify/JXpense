@@ -1,0 +1,30 @@
+<section>
+  <nav>
+    <ul class="nav justify-content-center bg-light text-white">
+      <li class="nav-item">
+        <%= link_to categories_path do %>
+          <i class="fas fa-chevron-left"></i>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button" %>
+      </li>
+    </ul>
+  </nav>
+  <h1>Transactions</h1>
+  <% if @products.empty? %>
+    <p>There are no products yet!</p>
+  <% end %>
+  <ul>
+    <% @products.each do |product| %>
+      <li>
+        <%= product.name %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div>
+    <%= link_to "Add Product", new_category_product_path %>
+  </div>
+</section>
+
