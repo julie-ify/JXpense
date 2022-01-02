@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root to: 'splash#index'
   end
+
+  resources :categories, only: [:index, :show, :new, :create]
 end
