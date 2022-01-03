@@ -1,26 +1,12 @@
-<section class="main-wrap" >
-  <div class="splash-wrap" >
-    <div class="container" >
-      <div>
-        <h1 class="bg-heading">Quick Scan</h1>
-        <p>Outrageously simple payments</p>
-      </div>
+<section class="container" >
+  <div class="dp-flex" >
+    <div>
+      <h1 class="flex bg-heading">Quickscan</h1>
+    </div>
 
-      <br />
-
-      <div class="display-flex mb-3">
-        <%= link_to "LOG IN", new_user_session_path, data: {disable_with: "login..."}, class: "btn btn-primary my-3" %>
-        <%= link_to "SIGN UP", new_user_registration_path, data: {disable_with: "signing..."}, class: "btn btn-light my-3" %>
-      </div>
-
-      <div class="display-flex mb-3">
-        <a href="https://www.linkedin.com/in/e-ifionu/" target="blank" class="img-width" >
-          <%= image_tag "linkedin.png", class: "img-width" %>
-        </a>
-        <a href="https://github.com/julie-ify" target="blank">
-          <%= image_tag "github.png", class: "img-width" %>
-        </a>
-      </div>
+    <div class="flex">
+      <%= link_to "LOG IN", new_user_session_path, data: {disable_with: "login..."}, class: "btn-blue mb-2 py-3" %>
+      <%= link_to "SIGN UP", new_user_registration_path, data: {disable_with: "signing..."}, class: "btn-light btn-outline-secondary py-3" %>
     </div>
   </div>
 </section>
