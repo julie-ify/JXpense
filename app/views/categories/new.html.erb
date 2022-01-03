@@ -1,16 +1,13 @@
 <section>
-  <nav>
-    <ul class="nav justify-content-center bg-light text-white">
-      <li class="nav-item">
+  <div class="devise-class">
+    <div class="d-flex justify-content-around align-items-center">
+      <span class="nav-item">
         <%= link_to categories_path do %>
-          <i class="fas fa-chevron-left"></i>
+          <i class="fas fa-chevron-left text-white"></i>
         <% end %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button" %>
-      </li>
-    </ul>
-  </nav>
-  <h1> CREATE CATEGORY</h1>
+      </span>
+      <h3 class="md-heading text-center">CREATE CATEGORY</h3>
+    </div>
+  </div>
   <%= render "form" %>
 </section>

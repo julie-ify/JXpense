@@ -1,31 +1,42 @@
-<%= render "shared/nav" %>
 <section>
-  <h1>CATEGORIES</h1>
+  <div class="d-flex justify-content-around align-items-center devise-class mb-4">
+    <h3 class="md-heading">CATEGORIES</h3>
+    <span class="nav-item">
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button me-5 text-white" %>
+    </span>
+  </div>
   <div>
     <% if @categories.size < 1 %>
-      <p>There are no categories!!</p>
+      <p class="text-center fs-2" >There are no categories!!</p>
     <% else %>
       <ul>
         <% @categories.each do |category| %>
           <li>
             <%= link_to category_path(category.id) do %>
-              <h2>
-                <%= category.name %>
-              </h2>
+              <div class="category-card">
+                <div>
+                  <%= image_tag category.icon, class: "img" %>
+                </div>
+                <div class="category-flex">
+                  <h2 class="fs-5 mb-1">
+                    <%= category.name %>
+                  </h2>
+                  <p class="fs-6 mb-0">
+                    <%= category.created_at.strftime("%d %b %Y") %>
+                  </p>
+                </div>
+                <span class="blackie">
+                  $<%= category.total_amount %>
+                </span>
+              </div>
             <% end %>
-            <div>
-              <%= image_tag category.icon %>
-            </div>
-            <span>
-              $<%= category.total_amount %>
-            </span>
           </li>
-          <% end %>
+        <% end %>
       </ul>
     <% end %>
   </div>
 
-  <div>
-    <%= link_to "Add Category", new_category_path %>
+  <div class="btn mt-5 py-4">
+    <%= link_to "ADD CATEGORY", new_category_path, class: "btn btn-new py-4"%>
   </div>
 </section>
