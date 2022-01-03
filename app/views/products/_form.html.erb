@@ -11,6 +11,6 @@
       <%= f.collection_select(:category_ids, Category.all, :id, :name, { prompt: true }, { multiple: true, required: true })%>
     </div>
 
-    <%= f.submit "Create Product", data: {disable_with: "Adding..."}, class: "btn my-3" %>
+    <%= f.submit "ADD A PRODUCT", data: {disable_with: "Adding..."}, class: "btn my-3" %>
   <% end %>
 </div>

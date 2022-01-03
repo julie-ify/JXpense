@@ -103,3 +103,14 @@ ul {
   color: var(--light-color);
   cursor: pointer;
 }
+
+.page-position {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.b {
+  margin-top: auto;
+}
