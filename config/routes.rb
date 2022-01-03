@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # get 'categories/index'
-  # get 'splash/index'
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -13,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show, :new, :create]
+  resources :products, only: [:index, :new, :create]
 end
