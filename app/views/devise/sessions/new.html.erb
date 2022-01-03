@@ -1,12 +1,14 @@
 <div class="splash-wrap">
-  <h2 class="fs-4 p-3 container mt-5 p-2">LOGIN</h2>
-  <div class="fs-4 p-3 container mt-5 p-5">
+  <div class="devise-class">
+    <h3 class="md-heading">LOGIN</h3>
+  </div>
+  <div class="fs-4 py-3 container">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control mb-1" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control py-2" %>
     </div>
     <div class="field">
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control mb-1" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control mb-5 py-2" %>
     </div>
     <% if devise_mapping.rememberable? %>
     <div class="field">
