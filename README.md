@@ -4,17 +4,21 @@
 
 > This is a ruby on rails mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-<!-- # Demo Link
+# Demo Link
 
-Click [here](#) to view the website online.
+Click [here](https://julie-budgetapp.herokuapp.com/) to view the website online.
 
-# Video Link
+# Video presentation Link
 
-Click [here](#) -->
+Click [here](#)
 
-<!-- # Screenshot -->
+# Screenshots
 
-<!-- ![Image of the desktop view](./img/1.png) -->
+![Image of the splash page](./app/assets/images/splash.png)
+
+![Image of the category view](./app/assets/images/category.png)
+
+![Image of the details view](./app/assets/images/product.png)
 
 # Getting Started
 
