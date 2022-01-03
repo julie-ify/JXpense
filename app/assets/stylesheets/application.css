@@ -13,3 +13,93 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@font-face {
+  font-family: Proxima Nova;
+  src: url('Proxima Nova Font.otf');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', Proxima Nova, sans-serif;
+  line-height: 1.5;
+  color: var(--light-color);
+  background-color: var(--bg-color);
+}
+
+:root {
+  --primary-color: #3778c2;
+  --secondary-color: #5fb523;
+  --light-color: #434b54;
+  --bg-color: #f1f1f1;
+  --text-color: #f2f2f2;
+  --bg-card: #fff;
+}
+
+.dp-flex {
+  margin: 10rem auto 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15rem;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.bold,
+h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.devise-class {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 15px 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.btn-blue {
+  background-color: var(--primary-color);
+  text-align: center;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.btn-light {
+  background-color: var(--bg-card);
+  text-align: center;
+  color: var(--light-color);
+  cursor: pointer;
+}

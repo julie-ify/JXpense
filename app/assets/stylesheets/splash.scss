@@ -1,0 +1,18 @@
+// Place all the styles related to the splash controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.bg-heading {
+  font-size: 50px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.img-width {
+  width: 30px;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.img-width:hover {
+  transform: scale(1.1);
+}
