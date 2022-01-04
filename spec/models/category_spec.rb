@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   describe 'validations' do
-    subject { Category.new(name: 'Fast food', icon: 'https://www.pselaw.com/wp-content/uploads/2016/08/istockpikachu-160x160.jpg') }
+    subject do
+      Category.new(name: 'Fast food', icon: 'https://www.pselaw.com/wp-content/uploads/2016/08/istockpikachu-160x160.jpg')
+    end
 
     before { subject.save }
 

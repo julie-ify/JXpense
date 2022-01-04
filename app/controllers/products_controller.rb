@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   load_and_authorize_resource
- 
+
   def new
     @product = Product.new
   end
@@ -11,7 +11,9 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to category_path(@product.categories.first.id), notice: 'Product was successfully created!.' }
+        format.html do
+          redirect_to category_path(@product.categories.first.id), notice: 'Product was successfully created!.'
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end

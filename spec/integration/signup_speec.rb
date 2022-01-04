@@ -25,12 +25,10 @@ RSpec.feature 'Sign up', type: :feature do
       click_button 'Sign up'
       expect(page).to have_content "Name can't be blank"
     end
-  
+
     scenario 'Submit form with no password' do
       within 'form' do
         fill_in 'Email', with: 'hello@gmail.com'
-        fill_in 'Full name', with: 'Hello'
-        fill_in 'Confirm password', with: '222222'
       end
       click_button 'Sign up'
       expect(page).to have_content "Password can't be blank"

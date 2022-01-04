@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.5'
-gem 'rubocop', '>= 1.0', '< 2.0'
-gem 'devise'
 gem 'cancancan'
-gem 'rspec-rails'
+gem 'devise'
 gem 'rails-controller-testing'
+gem 'rspec-rails'
+gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'

@@ -16,7 +16,7 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
     end
   end
- 
+
   describe 'associations' do
     it 'has many categories' do
       expect(User.reflect_on_association(:categories).macro).to eq(:has_many)
