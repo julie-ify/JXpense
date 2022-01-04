@@ -34,9 +34,9 @@ To get a local copy up and running follow these simple steps.
 
 # Testing
 
-`bundle exec rspec` will run all the tests.
+`rspec spec` will run all the tests.
 
-Also, you can run `bundle exec rspec spec/` to run specific tests.
+Also, you can run `rspec spec/` to run specific tests.
 
 You can also run `RAILS_ENV=test rspec spec/` to run the tests in test mode.
 
