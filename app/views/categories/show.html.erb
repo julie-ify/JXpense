@@ -1,0 +1,51 @@
+<section class="page-position" >
+  <div>
+    <div class="devise-class">
+      <div class="d-flex justify-content-around align-items-center">
+        <span class="nav-item">
+          <%= link_to categories_path do %>
+            <i class="fas fa-chevron-left text-white"></i>
+          <% end %>
+        </span>
+        <h3 class="md-heading text-center">PRODUCTS</h3>
+      </div>
+    </div>
+    <% if @products.empty? %>
+      <p class="text-center fs-2">There are no products yet!</p>
+    <% end %>
+    <div class="category-card mt-4">
+      <div>
+        <%= image_tag @category.icon, class: "img" %>
+      </div>
+      <div>
+        <h2 class="fs-5 mb-1">
+          <%= @category.name %>
+        </h2>
+      </div>
+      <span class="blackie">
+        $<%= @category.total_amount %>
+      </span>
+    </div>
+    <ul>
+      <% @products.each do |product| %>
+        <li class="product-card" >
+          <div>
+            <%= product.name %>
+          </div>
+          <div>
+            <i class="far fa-calendar-alt"></i>
+            <%= product.created_at.strftime("%d %b %Y") %> at <%= product.created_at.strftime("%r")%>
+          </div>
+          <div class="blackie">
+            $<%= product.amount %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="btn mt-5 py-4">
+    <%= link_to "ADD A NEW PRODUCT", new_product_path(@category.id), class: "btn py-4" %>
+  </div>
+</section>
+

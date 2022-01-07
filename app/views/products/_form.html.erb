@@ -1,0 +1,16 @@
+
+<div class="fs-4 p-3 border container mb-2">
+  <%= form_with model: @product, method: :post, local: true do |f| %>
+
+    <%= f.text_field :name, required: true, placeholder: "Name", autofocus: true, autocomplete: "name", class: "form-control mb-2" %>
+
+    <%= f.number_field :amount, required: true, placeholder: "Amount", autofocus: true, autocomplete: "Amount", step: "any", class: "form-control mb-2" %>
+
+    <div class="form-group">
+      <%= f.label :category %>
+      <%= f.collection_select(:category_ids, Category.all, :id, :name, { prompt: true }, { multiple: true, required: true })%>
+    </div>
+
+    <%= f.submit "ADD A PRODUCT", data: {disable_with: "Adding..."}, class: "btn my-3" %>
+  <% end %>
+</div>
