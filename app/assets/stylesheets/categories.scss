@@ -22,7 +22,7 @@
   align-items: center;
 }
 
-img {
+.img {
   width: 60px;
 }
 
@@ -37,4 +37,30 @@ img {
   color: var(--text-color);
   font-size: 20px;
   border: 1px solid var(--bg-card);
+}
+
+.user-icon {
+  font-size: 20px;
+  background-color: var(--blue-color);
+  padding: 3px 10px;
+  border-radius: 50%;
+  color: var(--black-color);
+}
+
+.md-heading {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.close a {
+  font-size: 30px;
+  color: var(--blue-color);
+}
+
+.cat-card {
+  background-color: var(--blue-color);
+  padding: 20px;
+  margin: 0 20px;
+  border-radius: 5px;
+  text-align: center;
 }

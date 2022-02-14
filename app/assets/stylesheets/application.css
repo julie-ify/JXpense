@@ -12,14 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-@font-face {
-  font-family: Proxima Nova;
-  src: url('Proxima Nova Font.otf');
-}
 
 * {
   padding: 0;
@@ -34,24 +30,26 @@ h3 {
   padding: 0;
 }
 
+:root {
+  --red-color: #e01e5a;
+  --yellow-color: #ecb22e;
+  --blue-color: #36c5f0;
+  --green-color: #2eb67d;
+  --black-color: #555e77;
+  --bg-color: #fdfdfd;
+  --white-color: #fff;
+  --form-color: #f1f1f1;
+}
+
 body {
-  font-family: 'Lato', Proxima Nova, sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 1.5;
-  color: var(--light-color);
+  color: var(--black-color);
   background-color: var(--bg-color);
 }
 
-:root {
-  --primary-color: #3778c2;
-  --secondary-color: #5fb523;
-  --light-color: #434b54;
-  --bg-color: #f1f1f1;
-  --text-color: #f2f2f2;
-  --bg-card: #fff;
-}
-
 .dp-flex {
-  margin: 10rem auto 0;
+  margin: 3rem auto 0;
   display: flex;
   flex-direction: column;
   row-gap: 15rem;
@@ -60,6 +58,8 @@ body {
 .flex {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .bold,
@@ -69,20 +69,16 @@ h1 {
 }
 
 .devise-class {
-  background-color: var(--primary-color);
-  color: var(--text-color);
   padding: 15px 0;
   text-align: center;
 }
 
 a {
   text-decoration: none;
-  color: var(--light-color);
 }
 
 a:hover {
   text-decoration: none;
-  color: var(--light-color);
 }
 
 ul {
@@ -90,27 +86,117 @@ ul {
   padding: 0;
 }
 
-.btn-blue {
-  background-color: var(--primary-color);
-  text-align: center;
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-.btn-light {
-  background-color: var(--bg-card);
-  text-align: center;
-  color: var(--light-color);
-  cursor: pointer;
-}
-
 .page-position {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding-bottom: 2rem;
 }
 
 .b {
   margin-top: auto;
+}
+
+.sign-card {
+  background-color: var(--form-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 55px 25px;
+}
+
+.sign-wrap {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.signup-btn {
+  background-color: var(--blue-color);
+  border: none;
+  width: 100%;
+  color: var(--white-color);
+}
+
+.dark-text {
+  color: var(--black-color);
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.flot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.group {
+  display: flex;
+  width: 100%;
+}
+
+.icon-input {
+  background-color: var(--blue-color);
+  opacity: 0.6;
+  padding: 7px;
+  border-radius: 1px;
+  color: var(--white-color);
+}
+
+.email-move {
+  border: none;
+  padding-left: 10px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.email-move:focus {
+  border: none;
+  outline: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.white-text {
+  color: var(--white-color);
+}
+
+.blue-text {
+  color: var(--blue-color);
+}
+
+.green-text {
+  color: var(--green-color);
+}
+
+.yellow-text {
+  color: var(--yellow-color);
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.md-txt {
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.sm-txt {
+  text-align: center;
+  padding: 0 40px;
+}
+
+.xl-heading {
+  text-align: center;
+  font-size: 30px;
 }
