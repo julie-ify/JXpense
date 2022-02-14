@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BudgetApp</title>
+    <title>Quick Scan</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <%= favicon_link_tag asset_path('favicon-32x32.png') %>
+    <script src="https://kit.fontawesome.com/ebfcfb10b5.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,10 +15,10 @@
 
   <body>
     <% if notice %>
-      <p class="alert alert-success text-center"><%= notice %></p>
+      <p class="alert alert-success text-center flot"><%= notice %></p>
     <% end %>
     <% if alert %>
-      <p class="alert alert-danger text-center"><%= alert %></p>
+      <p class="alert alert-danger text-center flot"><%= alert %></p>
     <% end %>
     <%= yield %>
   </body>
