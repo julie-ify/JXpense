@@ -1,14 +1,31 @@
 <section class="page-position">
   <div>
-    <div class="d-flex justify-content-around align-items-center devise-class mb-4">
-      <h3 class="md-heading">CATEGORIES</h3>
-      <span class="nav-item">
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button me-5 text-white" %>
-      </span>
+    <div class="d-flex justify-content-around align-items-center devise-class my-4">
+      <div class="d-flex justify-content-around align-items-center" >
+        <div class="user-icon me-2">
+          <%= link_to sign_out_path do %>
+          <div><%= fa_icon "user" %></div>
+          <% end %>
+        </div>
+        <h3 class="md-heading">Hi <%= current_user.name %></h3>
+      </div>
+
+      <div class="d-flex justify-content-around align-items-center">
+        <h3 class="md-heading">Add Category</h3>
+        <div class="user-icon ms-2">
+          <%= link_to new_category_path do %>
+          <div><%= fa_icon "plus" %></div>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div>
+      <div class="cat-card">
+        <h3 class="xl-heading mb-4 text-white">Account balance</h3>
+        <h3 class="xl-heading white-text bold-text"> $<%= current_user.amount %></h3>
+      </div>
       <% if @categories.size < 1 %>
-        <p class="text-center fs-2" >There are no categories!!</p>
+        <p class="text-center md-heading mt-5" >There are no categories!! <br/> Please add a category</p>
       <% else %>
         <ul>
           <% @categories.each do |category| %>
@@ -29,6 +46,9 @@
                   <span class="blackie">
                     $<%= category.total_amount %>
                   </span>
+                  <span class="blackie">
+                    $<%= category.total %>
+                  </span>
                 </div>
               <% end %>
             </li>
@@ -36,9 +56,5 @@
         </ul>
       <% end %>
     </div>
-  </div>
-
-  <div class="btn mt-5 py-4 b">
-    <%= link_to "ADD A NEW CATEGORY", new_category_path, class: "btn btn-new py-4"%>
   </div>
 </section>
