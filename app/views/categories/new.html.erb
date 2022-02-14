@@ -1,13 +1,4 @@
 <section>
-  <div class="devise-class">
-    <div class="d-flex justify-content-around align-items-center">
-      <span class="nav-item">
-        <%= link_to categories_path do %>
-          <i class="fas fa-chevron-left text-white"></i>
-        <% end %>
-      </span>
-      <h3 class="md-heading text-center">CREATE CATEGORY</h3>
-    </div>
-  </div>
+  <div class="mt-3 px-3 close"><%= link_to "X", categories_path %></div>
   <%= render "form" %>
 </section>
