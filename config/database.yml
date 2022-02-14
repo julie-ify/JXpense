@@ -34,6 +34,7 @@ development:
   host: localhost
   username: postgres
   port: 5432
+  password: postgres
 
   # The password associated with the postgres role (username).
   #password:
