@@ -23,22 +23,25 @@
           <%= @category.name %>
         </h2>
       </div>
-      <span class="blackie">
-        $<%= @category.total_amount %>
-      </span>
     </div>
     <ul>
       <% @products.each do |product| %>
-        <li class="product-card" >
-          <div>
-            <%= product.name %>
-          </div>
+        <li class="date-flex bold-text">
           <div>
             <i class="far fa-calendar-alt"></i>
-            <%= product.created_at.strftime("%d %b %Y") %> at <%= product.created_at.strftime("%r")%>
+            <%= product.created_at.strftime("%d %b %Y") %>
           </div>
-          <div class="blackie">
-            $<%= product.amount %>
+          <div class="product-card">
+            <div>
+              <%= product.name.capitalize %>
+            </div>
+            <div>
+              <i class="far fa-calendar-alt"></i>
+              <%= product.created_at.strftime("%r")%>
+            </div>
+            <div class="red-text bold-text">
+              -$<%= product.amount %>
+            </div>
           </div>
         </li>
       <% end %>
