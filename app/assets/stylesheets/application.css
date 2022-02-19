@@ -15,7 +15,7 @@
  *= require font-awesome
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 * {
   padding: 0;
@@ -42,7 +42,7 @@ h3 {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   line-height: 1.5;
   color: var(--black-color);
   background-color: var(--bg-color);
@@ -180,6 +180,10 @@ ul {
   color: var(--yellow-color);
 }
 
+.red-text {
+  color: var(--red-color);
+}
+
 .bold-text {
   font-weight: bold;
 }
@@ -198,5 +202,5 @@ ul {
 
 .xl-heading {
   text-align: center;
-  font-size: 30px;
+  font-size: 22px;
 }

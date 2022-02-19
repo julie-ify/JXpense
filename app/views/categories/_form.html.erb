@@ -7,12 +7,10 @@
         <span class="icon-input"><%= fa_icon "user" %></span>
         <%= f.text_field :name, required: true, placeholder: "Name", autofocus: true, autocomplete: "name", class: "email-move" %>
       </div>
-
       <div class="group mb-3">
         <span class="icon-input"><%= fa_icon "user" %></span>
         <%= f.text_field :icon, placeholder: "Icon link", autofocus: true, autocomplete: "icon", class: "email-move" %>
-      </div>
-
+      </div> 
       <%= f.submit "ADD", data: {disable_with: "Adding..."}, class: "signup-btn my-4 py-2" %>
     <% end %>
   </div>
