@@ -21,18 +21,31 @@
     </div>
     <div>
       <div class="cat-card">
-        <h3 class="xl-heading mb-4 text-white">Account balance</h3>
 
-        <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
-        <h3 class="xl-heading red-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
-        <% else %>
-        <h3 class="xl-heading white-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
-        <% end %>
+        <div>
+          <h3 class="xl-heading mb-2 text-white bold-text">Initial Budget</h3>
+          <h3 class="xl-heading mb-2 text-white bold-text"> $<%= current_user.amount %> </h3>
+        </div>
+ 
+        <div>
+          <h3 class="xl-heading text-white mb-2 bold-text">Spent</h3>
+          <h3 class="xl-heading white-text bold-text"> $<%= @categories.map { |cat| cat.total_amount }.sum %></h3>
+        </div>
+
+        <div>
+          <h3 class="xl-heading mb-2 text-white bold-text">Available</h3>
+
+          <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
+          <h3 class="xl-heading red-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
+          <% else %>
+          <h3 class="xl-heading white-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
+          <% end %>
+        </div>
       </div>
 
 
       <% if @categories.size < 1 %>
-        <p class="text-center md-heading mt-5" >There are no categories!! <br/> Please add a category</p>
+        <p class="text-center md-heading mt-5" >There are no categories yet!! <br/> Please add a category</p>
       <% else %>
         <ul class="cat-list md-heading">
           <% @categories.each do |category| %>
@@ -44,14 +57,14 @@
                   </div>
                   <div class="category-flex">
                     <h2 class="mb-1">
-                      <%= category.name %>
+                      <%= category.name.capitalize %>
                     </h2>
                     <p class="mb-0">
                       <%= category.created_at.strftime("%d %b %Y") %>
                     </p>
                   </div>
-                  <span class="blackie red-text">
-                    - $<%= category.total_amount %>
+                  <span class="red-text bold-text">
+                    -$<%= category.total_amount %>
                   </span>
                 </div>
               <% end %>
