@@ -10,4 +10,8 @@ class Category < ApplicationRecord
   def total_amount
     products.sum(:amount)
   end
+
+  def total
+    user.amount - products.sum(:amount)
+  end
 end

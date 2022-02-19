@@ -1,16 +1,53 @@
 <section class="page-position">
   <div>
-    <div class="d-flex justify-content-around align-items-center devise-class mb-4">
-      <h3 class="md-heading">CATEGORIES</h3>
-      <span class="nav-item">
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button me-5 text-white" %>
-      </span>
+    <div class="d-flex justify-content-around align-items-center devise-class my-4">
+      <div class="d-flex justify-content-around align-items-center" >
+        <div class="user-icon me-2">
+          <%= link_to sign_out_path do %>
+          <div><%= fa_icon "user" %></div>
+          <% end %>
+        </div>
+        <h3 class="md-heading">Hi <%= current_user.name %></h3>
+      </div>
+
+      <div class="d-flex justify-content-around align-items-center">
+        <h3 class="md-heading">Add Category</h3>
+        <div class="user-icon ms-2">
+          <%= link_to new_category_path do %>
+          <div><%= fa_icon "plus" %></div>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div>
+      <div class="cat-card">
+
+        <div>
+          <h3 class="xl-heading mb-2 text-white bold-text">Initial Budget</h3>
+          <h3 class="xl-heading mb-2 text-white bold-text"> $<%= current_user.amount %> </h3>
+        </div>
+ 
+        <div>
+          <h3 class="xl-heading text-white mb-2 bold-text">Spent</h3>
+          <h3 class="xl-heading white-text bold-text"> $<%= @categories.map { |cat| cat.total_amount }.sum %></h3>
+        </div>
+
+        <div>
+          <h3 class="xl-heading mb-2 text-white bold-text">Available</h3>
+
+          <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
+          <h3 class="xl-heading red-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
+          <% else %>
+          <h3 class="xl-heading white-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
+          <% end %>
+        </div>
+      </div>
+
+
       <% if @categories.size < 1 %>
-        <p class="text-center fs-2" >There are no categories!!</p>
+        <p class="text-center md-heading mt-5" >There are no categories yet!! <br/> Please add a category</p>
       <% else %>
-        <ul>
+        <ul class="cat-list md-heading">
           <% @categories.each do |category| %>
             <li>
               <%= link_to category_path(category.id) do %>
@@ -19,15 +56,15 @@
                     <%= image_tag category.icon, class: "img" %>
                   </div>
                   <div class="category-flex">
-                    <h2 class="fs-5 mb-1">
-                      <%= category.name %>
+                    <h2 class="mb-1">
+                      <%= category.name.capitalize %>
                     </h2>
-                    <p class="fs-6 mb-0">
+                    <p class="mb-0">
                       <%= category.created_at.strftime("%d %b %Y") %>
                     </p>
                   </div>
-                  <span class="blackie">
-                    $<%= category.total_amount %>
+                  <span class="red-text bold-text">
+                    -$<%= category.total_amount %>
                   </span>
                 </div>
               <% end %>
@@ -36,9 +73,5 @@
         </ul>
       <% end %>
     </div>
-  </div>
-
-  <div class="btn mt-5 py-4 b">
-    <%= link_to "ADD A NEW CATEGORY", new_category_path, class: "btn btn-new py-4"%>
   </div>
 </section>

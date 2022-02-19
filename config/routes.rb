@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   end
 
   unauthenticated :user do
-    root to: 'splash#index'
+    root to: 'splash#first_screen', as: :unauthenticated_root
   end
 
+  get '/splash#index', to: 'splash#index', as: 'splash'
+  get '/splash#first_screen', to: 'splash#first_screen', as: 'splashx'
+
+  get '/categories#sign_out', to: 'categories#sign_out', as: 'sign_out'
+ 
   resources :categories, only: [:index, :show, :new, :create]
   resources :products, only: [:new, :create]
 end

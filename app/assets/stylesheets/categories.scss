@@ -3,17 +3,20 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .category-card {
-  width: 95%;
-  margin: 0 auto;
+  margin: 3rem 25px;
   display: flex;
+  border-radius: 5px;
   column-gap: 2rem;
-  margin-bottom: 0.5rem;
-  background-color: var(--bg-card);
   padding: 20px;
   align-items: center;
-  color: #aaa;
-  box-shadow: 1px 0 4px;
+  box-shadow: 1px 0 4px var(--blue-color);
   justify-content: space-between;
+}
+
+.cat-list {
+  a {
+    color: var(--black-color);
+  }
 }
 
 .category-flex {
@@ -22,8 +25,10 @@
   align-items: center;
 }
 
-img {
-  width: 60px;
+.img {
+  width: 40px;
+  border-radius: 100px;
+  padding: 2px 5px;
 }
 
 .blackie {
@@ -38,3 +43,45 @@ img {
   font-size: 20px;
   border: 1px solid var(--bg-card);
 }
+
+.user-icon {
+  font-size: 20px;
+  background-color: var(--blue-color);
+  padding: 3px 10px;
+  border-radius: 50%;
+  color: var(--black-color);
+}
+
+.md-heading {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.close a {
+  font-size: 30px;
+  color: var(--blue-color);
+}
+
+.cat-card {
+  background-color: var(--blue-color);
+  padding: 30px;
+  margin: 25px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 10px -15px var(--yellow-color);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+// .group select {
+//   width: 100%;
+// }
+
+// .group select > option {
+//   width: 10px;
+//   border-radius: 50%;
+//   // display: none;
+// }
