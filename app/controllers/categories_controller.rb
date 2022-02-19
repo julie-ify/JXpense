@@ -14,8 +14,7 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def sign_out
-  end
+  def sign_out; end
 
   def create
     @category = Category.new(category_params)
