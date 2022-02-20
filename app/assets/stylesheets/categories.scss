@@ -76,12 +76,29 @@
   row-gap: 2rem;
 }
 
-// .group select {
-//   width: 100%;
-// }
+.group select {
+  width: 100%;
+}
 
-// .group select > option {
-//   width: 10px;
-//   border-radius: 50%;
-//   // display: none;
+.group select > option {
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+  background-color: var(--black-color);
+  color: var(--blue-color);
+  padding: 10px 0;
+  // display: none;
+}
+
+.group select > option:first-child {
+  background-color: var(--form-color);
+  color: var(--black-color);
+  margin: 0;
+  padding: 0;
+}
+
+// .group select > option:first-child {
+//   background-color: var(--black-color);
+//   color: var(--blue-color);
+//   margin: 0;
 // }
