@@ -64,7 +64,11 @@
                     </p>
                   </div>
                   <span class="red-text bold-text">
-                    -$<%= category.total_amount %>
+                    <% if category.total_amount > 1 %>
+                      <h3 class="xl-heading red-text bold-text"> -$<%= category.total_amount %></h3>
+                    <% else %>
+                      <h3 class="xl-heading black-text bold-text"> $<%= category.total_amount %></h3>
+                    <% end %>
                   </span>
                 </div>
               <% end %>
