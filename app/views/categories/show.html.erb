@@ -10,54 +10,76 @@
         </span>
       </div>
     </div>
-    <div class="d-flex justify-content-end align-items-center px-4">
+
+    <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
+        <h3 class="red-text bold-text md-heading d-flex justify-content-end align-items-center px-4 pb-4">No available amount</h3>
+      <% else %>
+      <div class="d-flex justify-content-end align-items-center px-4 pb-4">
       <h3 class="md-heading">Add Product</h3>
       <div class="user-icon ms-2">
-        <%= link_to new_product_path(@category.id) do %>
+        <%= link_to new_category_product_path(@category.id) do %>
         <div><%= fa_icon "plus" %></div>
         <% end %>
+      </div>
+      <% end %>
+
+
+    
+
+    </div>
+    <div class="colored-bg">
+      <div class="cat-pro">
+        <div class="category-inner">
+          <div>
+            <%= image_tag @category.icon, class: "img" %>
+          </div>
+          <div class="category-flex">
+            <h2 class="mb-1 md-heading white-text">
+              <%= @category.name.capitalize %>
+            </h2>
+            <p class="mb-0 black-text">
+              <%= @category.created_at.strftime("%d %b %Y") %>
+            </p>
+          </div>
+        </div>
+        <span class="red-text bold-text">
+          <% if @category.total_amount > 1 %>
+            <h3 class="md-heading red-text bold-text"> -$<%= @category.total_amount %></h3>
+          <% else %>
+            <h3 class="md-heading black-text bold-text"> $<%= @category.total_amount %></h3>
+          <% end %>
+        </span>
+      </div>
+      <div class="reset">
+        <p><%= link_to 'Edit', edit_category_path(@category), method: 'get', class: "signup-btn-dark my-4 p-2" %></p>
+        <p><%= link_to 'Remove', category_path(@category), method: 'delete', data: { confirm: 'Are you sure?' }, class: "signup-btn-dark my-4 p-2" %></p>
       </div>
     </div>
     <% if @products.empty? %>
       <p class="text-center fs-5 my-5 sm-heading">There are no products yet!</p>
     <% end %>
-    <div class="category-card">
-      <div>
-        <%= image_tag @category.icon, class: "img" %>
-      </div>
-      <div class="category-flex">
-        <h2 class="mb-1">
-          <%= @category.name.capitalize %>
-        </h2>
-        <p class="mb-0">
-          <%= @category.created_at.strftime("%d %b %Y") %>
-        </p>
-      </div>
-      <span class="red-text bold-text">
-        <% if @category.total_amount > 1 %>
-          <h3 class="xl-heading red-text bold-text"> -$<%= @category.total_amount %></h3>
-        <% else %>
-          <h3 class="xl-heading black-text bold-text"> $<%= @category.total_amount %></h3>
-        <% end %>
-      </span>
-    </div>
     <ul>
-      <% @products.each do |product| %>
-        <li class="date-flex bold-text">
-          <div>
+      <% @category.products.each do |product| %>
+        <li class="bold-text">
+          <div class="light-text px-4 pb-4">
             <i class="far fa-calendar-alt"></i>
             <%= product.created_at.strftime("%d %b %Y") %>
           </div>
-          <div class="product-card">
-            <div>
-              <%= product.name.capitalize %>
+          <div class="category-cardp">
+            <div class="product-card mb-3">
+              <div>
+                <%= product.name.capitalize %>
+              </div>
+              <div class="light-text">
+                <%= product.created_at.strftime("%r")%>
+              </div>
+              <div class="red-text bold-text md-heading">
+                -$<%= product.amount %>
+              </div>
             </div>
-            <div>
-              <i class="far fa-calendar-alt"></i>
-              <%= product.created_at.strftime("%r")%>
-            </div>
-            <div class="red-text bold-text">
-              -$<%= product.amount %>
+            <div class="reset">
+              <p><%= link_to 'Edit', edit_category_product_path(@category.id, product.id), method: 'get', class: "signup-btn my-4 p-2" %></p>
+              <p><%= link_to 'Remove', category_product_path(@category.id, product.id), method: 'delete', data: { confirm: 'Are you sure?' }, class: "signup-btn my-4 p-2" %></p>
             </div>
           </div>
         </li>
