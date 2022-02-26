@@ -119,6 +119,13 @@ ul {
   color: var(--white-color);
 }
 
+.signup-btn-dark {
+  background-color: var(--black-color);
+  border: none;
+  width: 100%;
+  color: var(--white-color);
+}
+
 .dark-text {
   color: var(--black-color);
   font-size: 18px;
@@ -154,6 +161,16 @@ ul {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+  padding-left: 25px;
+  margin-bottom: 1rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .white-text {
   color: var(--white-color);
 }
@@ -180,6 +197,12 @@ ul {
 
 .bold-text {
   font-weight: bold;
+}
+
+.light-text {
+  color: #ccc;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .md-txt {

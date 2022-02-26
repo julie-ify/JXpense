@@ -3,14 +3,45 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .category-card {
-  margin: 3rem 25px;
+  margin: 0 25px 3rem;
   display: flex;
   border-radius: 5px;
   column-gap: 2rem;
-  padding: 20px;
+  padding: 15px 20px;
   align-items: center;
   box-shadow: 1px 0 4px var(--blue-color);
   justify-content: space-between;
+}
+
+.category-cardp {
+  margin: 0 25px 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 15px 20px;
+  box-shadow: 1px 0 4px var(--blue-color);
+}
+
+.colored-bg {
+  margin: 0 25px 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 15px 20px;
+  box-shadow: 2px 2px 3px var(--black-color);
+  background-color: var(--blue-color);
+}
+
+.reset {
+  display: flex;
+  column-gap: 0.2rem;
+}
+
+.cat-pro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .cat-list {
@@ -22,18 +53,26 @@
 .category-flex {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+.category-inner {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.cat-product {
+  display: flex;
+  flex-direction: column;
 }
 
 .img {
-  width: 40px;
-  border-radius: 100px;
-  padding: 2px 5px;
-}
-
-.blackie {
-  color: var(--light-color);
-  font-weight: bold;
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  border: 2px solid var(--blue-color);
 }
 
 .btn {
@@ -45,11 +84,12 @@
 }
 
 .user-icon {
-  font-size: 20px;
-  background-color: var(--blue-color);
+  font-size: 25px;
   padding: 3px 10px;
   border-radius: 50%;
   color: var(--black-color);
+  border-radius: 50%;
+  border: 1px solid var(--blue-color);
 }
 
 .md-heading {
