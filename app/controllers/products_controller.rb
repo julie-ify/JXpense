@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    
     @category = Category.find_by(id: params[:category_id])
     @product = @category.products.new(product_params)
     @product.user = current_user
@@ -24,24 +23,23 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @category =  Category.find_by(id: params[:category_id])
+    @category = Category.find_by(id: params[:category_id])
     @product = @category.products.find(params[:id])
   end
-  
+
   def update
-    @category =  Category.find_by(id: params[:category_id])
+    @category = Category.find_by(id: params[:category_id])
     @product = @category.products.find(params[:id])
 
     if @product.update(product_params)
       redirect_to categories_path, notice: 'Product was successfully updated!.'
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
-
   def destroy
-    @category =  Category.find_by(id: params[:category_id])
+    @category = Category.find_by(id: params[:category_id])
     @product = @category.products.find(params[:id])
 
     @product.destroy
