@@ -14,11 +14,9 @@ Click [here](https://www.loom.com/share/25d0142d8c6a4eabbafccec9af3158cb)
 
 # Screenshots
 
-![Image of the splash page](./app/assets/images/splash.png)
-
-![Image of the category view](./app/assets/images/category.png)
-
-![Image of the details view](./app/assets/images/product.png)
+|         Your Implementation          |             Figma Design             | jiniasj                               | wiwhieqwe                            |
+| :----------------------------------: | :----------------------------------: | ------------------------------------- | ------------------------------------ |
+| ![](./app/assets/images/splash1.png) | ![](./app/assets/images/splash2.png) | ![](./app/assets/images/category.png) | ![](./app/assets/images/product.png) |
 
 # Getting Started
 
@@ -27,7 +25,6 @@ To get a local copy up and running follow these simple steps.
 - You can clone this repo by typing `git clone https://github.com/julie-ify/Budget-app.git` on your terminal.
 
 - Type `cd Budget-app` to access the project on the terminal.
-  
 - Run `bundle install` to install all the required dependancies.
 
 - Run `rails s` to start a development server.
