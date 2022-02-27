@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/categories#sign_out', to: 'categories#sign_out', as: 'sign_out'
  
-  resources :categories, only: [:index, :show, :new, :create]
-  resources :products, only: [:new, :create]
+  resources :categories, only: [:index, :show, :new, :create, :update, :destroy, :edit] do
+    resources :products, only: [:new, :create, :update, :destroy, :edit, :show]
+  end
 end

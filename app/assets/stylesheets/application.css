@@ -108,10 +108,8 @@ ul {
 .sign-wrap {
   min-height: 100vh;
   background-color: var(--bg-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 20px;
+  margin-top: 50px;
 }
 
 .signup-btn {
@@ -121,18 +119,17 @@ ul {
   color: var(--white-color);
 }
 
+.signup-btn-dark {
+  background-color: var(--black-color);
+  border: none;
+  width: 100%;
+  color: var(--white-color);
+}
+
 .dark-text {
   color: var(--black-color);
   font-size: 18px;
   margin-right: 15px;
-}
-
-.flot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
 }
 
 .group {
@@ -164,6 +161,16 @@ ul {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+  padding-left: 25px;
+  margin-bottom: 1rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .white-text {
   color: var(--white-color);
 }
@@ -184,8 +191,18 @@ ul {
   color: var(--red-color);
 }
 
+.black-text {
+  color: var(--black-color);
+}
+
 .bold-text {
   font-weight: bold;
+}
+
+.light-text {
+  color: #ccc;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .md-txt {

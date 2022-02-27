@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @products = @category.products.order(created_at: :desc)
+    @categories = current_user.categories
   end
 
   def new
@@ -28,6 +29,26 @@ class CategoriesController < ApplicationController
       end
     end
   end
+
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    @category.update(category_params)
+
+    redirect_to categories_path(@category), notice: 'Category was successfully updated!.'
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+
+    redirect_to categories_url, notice: 'Category was successfully deleted!'
+  end
+
+  private
 
   def category_params
     params.require(:category).permit(:name, :icon)
