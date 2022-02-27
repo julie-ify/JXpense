@@ -14,7 +14,7 @@ Click [here](https://www.loom.com/share/25d0142d8c6a4eabbafccec9af3158cb)
 
 # Screenshots
 
-|         Your Implementation          |             Figma Design             | jiniasj                               | wiwhieqwe                            |
+|            Splash Screen             |              SignUp/In               | Category Page                         | Product Page                         |
 | :----------------------------------: | :----------------------------------: | ------------------------------------- | ------------------------------------ |
 | ![](./app/assets/images/splash1.png) | ![](./app/assets/images/splash2.png) | ![](./app/assets/images/category.png) | ![](./app/assets/images/product.png) |
 

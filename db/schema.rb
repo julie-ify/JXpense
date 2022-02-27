@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2022_02_13_212437) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
-    t.string "icon", null: false
     t.datetime "created_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_categories_on_user_id"
