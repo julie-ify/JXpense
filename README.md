@@ -6,7 +6,7 @@
 
 # Demo Link
 
-Click [here](https://julie-budgetapp.herokuapp.com/) to view the website online.
+Click [here](https://juliana-budget-app.herokuapp.com/) to view the website online.
 
 # Video presentation Link
 
