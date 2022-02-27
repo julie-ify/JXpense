@@ -7,7 +7,7 @@
           <div><%= fa_icon "user" %></div>
           <% end %>
         </div>
-        <h3 class="md-heading">Hi <%= current_user.name %></h3>
+        <h3 class="md-heading">Hi <%= current_user.name.split(" ")[0] %></h3>
       </div>
 
       <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
@@ -60,9 +60,6 @@
               <%= link_to category_path(category.id) do %>
                 <div class="category-card">
                   <div class="category-inner">
-                    <div>
-                      <%= image_tag category.icon, class: "img" %>
-                    </div>
                     <div>
                       <h2 class="mb-1 md-heading">
                         <%= category.name.capitalize %>
