@@ -10,10 +10,10 @@ Rails.application.routes.draw do
     root to: 'splash#first_screen', as: :unauthenticated_root
   end
 
-  get '/splash#index', to: 'splash#index', as: 'splash'
-  get '/splash#first_screen', to: 'splash#first_screen', as: 'splashx'
+  get '/splash', to: 'splash#index'
+  get '/splash/first_screen', to: 'splash#first_screen', as: 'splashx'
 
-  get '/categories#sign_out', to: 'categories#sign_out', as: 'sign_out'
+  get '/sign_out', to: 'categories#sign_out', as: 'sign_out'
  
   resources :categories, only: [:index, :show, :new, :create, :update, :destroy, :edit] do
     resources :products, only: [:new, :create, :update, :destroy, :edit, :show]
