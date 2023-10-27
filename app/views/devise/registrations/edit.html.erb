@@ -6,13 +6,11 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="group mb-3">
-      <span class="icon-input"><%= fa_icon "user" %></span>
-      <%= f.text_field :name, placeholder: "Full name", class: "email-move" %>
+      <%= f.text_field :name, autofocus: true, placeholder: "Full name", class: "email-move" %>
     </div>
 
     <div class="group mb-3">
-      <span class="icon-input"><%= fa_icon "envelope" %></span>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "email-move" %>
+      <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "email-move" %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -20,22 +18,18 @@
     <% end %>
 
     <div class="group mb-3">
-      <span class="icon-input"><%= fa_icon "user" %></span>
       <%= f.number_field :amount, placeholder: "Amount", class: "email-move" %>
     </div>
 
     <div class="group mb-3">
-      <span class="icon-input"><%= fa_icon "lock" %></span>
       <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "email-move" %>
     </div>
 
     <div class="group mb-3">
-      <span class="icon-input"><%= fa_icon "lock" %></span>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password", class: "email-move" %>
     </div>
 
     <div class="group mb-3">
-      <span class="icon-input"><%= fa_icon "lock" %></span>
       <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password", class: "email-move" %>
     </div>
 

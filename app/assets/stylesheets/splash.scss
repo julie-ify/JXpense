@@ -2,11 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.splash-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	gap: 20px;
+	padding-top: 40px;
+}
+
+
 .bg-heading {
   color: var(--black-color);
   font-family: 'Lato', sans-serif;
-  margin-bottom: 5rem;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .img-width {
@@ -20,8 +28,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  padding-bottom: 2rem;
+	gap: 25px;
 }
 
 .side {
@@ -36,10 +43,10 @@
   padding: 0 20px;
 }
 
-.txt-bg-color {
+.txt-bg-color  {
   font-size: 20px;
   background-color: var(--blue-color);
-  padding: 20px 30px;
+  padding: 10px 12px;
   border-radius: 2px;
   cursor: pointer;
   color: var(--white-color);
@@ -55,7 +62,7 @@
 
 .txt-bg {
   font-size: 20px;
-  padding: 20px 30px;
+  padding: 10px 12px;
   border-radius: 2px;
   cursor: pointer;
   background-color: var(--bg-color);

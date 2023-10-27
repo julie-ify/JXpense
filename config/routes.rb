@@ -18,4 +18,13 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show, :new, :create, :update, :destroy, :edit] do
     resources :products, only: [:new, :create, :update, :destroy, :edit, :show]
   end
+
+	authenticated :user do
+			# Catch-all route for any unmatched route
+		get '*path', to: 'categories#index'
+  end
+
+  unauthenticated :user do
+		get '*path', to: 'splash#index'
+  end
 end

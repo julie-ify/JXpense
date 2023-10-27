@@ -3,23 +3,19 @@ class ProductsController < ApplicationController
 
   def new
     @category = Category.find_by(id: params[:category_id])
-    # @categories = current_user.categories
+		@product = @category.products.new()
   end
 
   def create
     @category = Category.find_by(id: params[:category_id])
-    @product = @category.products.new(product_params)
+    @product = @category.products.build(product_params)
     @product.user = current_user
 
-    respond_to do |format|
-      if @product.save
-        format.html do
-          redirect_to category_path(@product.categories.first.id), notice: 'Product was successfully created!.'
-        end
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
-    end
+		if @product.save
+				redirect_to category_path(@product.categories.first.id), notice: 'Product was successfully created!.'
+		else
+			render :new
+		end
   end
 
   def edit
@@ -34,7 +30,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to categories_path, notice: 'Product was successfully updated!.'
     else
-      render 'edit'
+      render :edit
     end
   end
 
