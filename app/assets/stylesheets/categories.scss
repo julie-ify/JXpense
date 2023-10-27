@@ -2,135 +2,221 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.cat-wrap {
+	max-width: 560px;
+}
+
 .category-card {
-  margin: 0 25px 3rem;
-  display: flex;
-  border-radius: 5px;
-  column-gap: 2rem;
-  padding: 15px 20px;
-  align-items: center;
-  box-shadow: 1px 0 4px var(--blue-color);
-  justify-content: space-between;
+	display: flex;
+	column-gap: 2rem;
+	padding: 15px 0;
+	align-items: center;
+	border-bottom: 1px solid rgba($color: #fafafa, $alpha: 1);
+	justify-content: space-between;
 }
 
 .category-cardp {
-  margin: 0 25px 2rem;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  padding: 15px 20px;
-  box-shadow: 1px 0 4px var(--blue-color);
+	margin: 0 25px 2rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	padding: 15px 20px;
+	box-shadow: 1px 0 4px var(--blue-color);
 }
 
 .colored-bg {
-  margin: 0 25px 2rem;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  padding: 15px 20px;
-  box-shadow: 2px 2px 3px var(--black-color);
-  background-color: var(--blue-color);
+	margin: 0 25px 2rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	padding: 15px 20px;
+	box-shadow: 2px 2px 3px var(--black-color);
+	background-color: var(--blue-color);
 }
 
 .reset {
-  display: flex;
-  column-gap: 0.2rem;
+	display: flex;
+	column-gap: 0.2rem;
 }
 
 .cat-pro {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
 }
 
 .cat-list {
-  a {
-    color: var(--black-color);
-  }
+	a {
+		color: var(--black-color);
+	}
 }
 
 .category-flex {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .category-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 1rem;
 }
 
 .cat-product {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
-.img {
-  width: 50px;
-  border-radius: 50%;
-  padding: 10px;
-  border: 2px solid var(--blue-color);
+.icon-wrapper {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.icon-wrapper-normal {
+	background-color: #8E7DBE;
+}
+.icon-wrapper-N {
+	background-color: #624CAB;
+}
+.icon-wrapper-F {
+	background-color: #C8963E;
+}
+.icon-wrapper-S {
+	background-color: #9BD1E5
+}
+.icon-wrapper-M {
+	background-color: #758ECD;
+}
+.icon-wrapper-H {
+	background-color: rgb(29, 205, 29);
+}
+.icon-wrapper-C {
+	background-color: #B96AC9;
+}
+.icon-wrapper-A {
+	background-color: #D7BCE8;
+}
+.icon-wrapper-I {
+	background-color: #679436;
+}
+
+.icon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.icon-normal {
+	background-color: #F1E3D3;
+}
+.icon-N {
+	background-color: #7189FF;
+}
+.icon-F {
+	background-color: #E3C567;
+}
+.icon-S {
+	background-color: #D1FAFF;
+}
+.icon-M {
+	background-color: #C1CEFE;
+}
+.icon-H {
+	background-color: aquamarine;
+}
+.icon-C {
+	background-color: #E980FC;
+}
+.icon-A {
+	background-color: #FDE2FF;
+}
+.icon-I {
+	background-color: #A5BE00;
 }
 
 .btn {
-  width: 100%;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  font-size: 20px;
-  border: 1px solid var(--bg-card);
+	width: 100%;
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+	font-size: 20px;
+	border: 1px solid var(--bg-card);
 }
 
 .user-icon {
-  font-size: 25px;
-  padding: 3px 10px;
-  color: var(--black-color);
-  border-radius: 50%;
-  border: 1px solid var(--blue-color);
+	height: 40px;
+	width: 40px;
+	font-size: 25px;
+	color: var(--black-color);
+	border-radius: 50%;
+	border: 1px solid var(--blue-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .md-heading {
-  font-size: 15px;
-  font-weight: bold;
+	font-size: 15px;
+	font-weight: bold;
 }
 
 .close a {
-  font-size: 30px;
-  color: var(--blue-color);
+	font-size: 25px;
+	color: var(--blue-color);
 }
 
 .cat-card {
-  background-color: var(--blue-color);
-  padding: 30px;
-  margin: 25px;
-  border-radius: 5px;
-  text-align: center;
-  box-shadow: 10px -15px var(--yellow-color);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: flex-start;
-  justify-content: center;
-  row-gap: 2rem;
+	background-color: var(--blue-color);
+	margin-bottom: 50px;
+	padding: 30px;
+	border-radius: 5px;
+	text-align: center;
+	box-shadow: 5px -5px var(--yellow-color);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: flex-start;
+	justify-content: center;
+	row-gap: 2rem;
 }
 
 .group select {
-  width: 100%;
+	width: 100%;
 }
 
 .group select > option {
-  width: 100%;
-  text-align: center;
-  margin: 20px auto;
-  background-color: var(--black-color);
-  color: var(--blue-color);
-  padding: 10px 0;
+	width: 100%;
+	text-align: center;
+	margin: 20px auto;
+	background-color: var(--black-color);
+	color: var(--blue-color);
+	padding: 10px 0;
 }
 
 .group select > option:first-child {
-  background-color: var(--form-color);
-  color: var(--black-color);
-  margin: 0;
-  padding: 0;
+	background-color: var(--form-color);
+	color: var(--black-color);
+	margin: 0;
+	padding: 0;
+}
+
+.link-icon {
+	color: var(--blue-color);
+}
+
+.date-format {
+	width: 100%;
+	padding: 10px 0;
+	background-color: rgba($color: #fafafa, $alpha: 0.2);
 }

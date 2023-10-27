@@ -15,209 +15,229 @@
  *= require font-awesome
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 h1,
 h2,
 h3 {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 :root {
-  --red-color: #e01e5a;
-  --yellow-color: #ecb22e;
-  --blue-color: #36c5f0;
-  --green-color: #2eb67d;
-  --black-color: #555e77;
-  --bg-color: #fdfdfd;
-  --white-color: #fff;
-  --form-color: #f1f1f1;
+	--red-color: #e01e5a;
+	--yellow-color: #ecb22e;
+	--blue-color: #36c5f0;
+	--green-color: #2eb67d;
+	--black-color: #555e77;
+	--bg-color: #fdfdfd;
+	--white-color: #fff;
+	--form-color: #f1f1f1;
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  line-height: 1.5;
-  color: var(--black-color);
-  background-color: var(--bg-color);
+	font-family: 'Lato', sans-serif;
+	line-height: 1.5;
+	color: var(--black-color);
+	background-color: var(--bg-color);
+}
+
+.App-container {
+	width: 100vw;
+	min-height: 100vh;
+	background-color: #fff;
+	padding: 0 20px;
+}
+
+.App-wrapper {
+	max-width: 576px;
+	background-color: #fff;
+	margin: 0 auto;
 }
 
 .dp-flex {
-  margin: 3rem auto 0;
-  display: flex;
-  flex-direction: column;
-  row-gap: 15rem;
+	margin: 3rem auto 0;
+	display: flex;
+	flex-direction: column;
+	row-gap: 15rem;
 }
 
 .flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .bold,
 h1 {
-  font-weight: bold;
-  text-align: center;
+	font-weight: bold;
+	text-align: center;
 }
 
 .devise-class {
-  padding: 15px 0;
-  text-align: center;
+	padding: 30px 0 50px;
+	text-align: center;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .page-position {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 2rem;
+	max-width: 560px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 2rem;
 }
 
 .b {
-  margin-top: auto;
+	margin-top: auto;
 }
 
 .sign-card {
-  background-color: var(--form-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 55px 25px;
+	background-color: var(--form-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 55px 25px;
 }
 
 .sign-wrap {
-  min-height: 100vh;
-  background-color: var(--bg-color);
-  padding: 20px;
-  margin-top: 50px;
+	min-height: 100vh;
+	background-color: var(--bg-color);
+	padding: 20px;
+	margin-top: 50px;
 }
 
 .signup-btn {
-  background-color: var(--blue-color);
-  border: none;
-  width: 100%;
-  color: var(--white-color);
+	background-color: var(--blue-color);
+	border: none;
+	width: 100%;
+	color: var(--white-color);
 }
 
 .signup-btn-dark {
-  background-color: var(--black-color);
-  border: none;
-  width: 100%;
-  color: var(--white-color);
+	background-color: var(--black-color);
+	border: none;
+	width: 100%;
+	color: var(--white-color);
 }
 
 .dark-text {
-  color: var(--black-color);
-  font-size: 18px;
-  margin-right: 15px;
+	color: var(--black-color);
+	font-size: 18px;
+	margin-right: 15px;
 }
 
 .group {
-  display: flex;
-  width: 100%;
+	display: flex;
+	width: 100%;
 }
 
 .icon-input {
-  background-color: var(--blue-color);
-  opacity: 0.6;
-  padding: 7px;
-  border-radius: 1px;
-  color: var(--white-color);
+	background-color: var(--blue-color);
+	opacity: 0.6;
+	padding: 7px;
+	border-radius: 1px;
+	color: var(--white-color);
 }
 
 .email-move {
-  border: none;
-  padding-left: 10px;
-  width: 100%;
-  border-radius: 2px;
+	border: none;
+	padding-left: 10px;
+	width: 100%;
+	border-radius: 2px;
 }
 
 .email-move:focus {
-  border: none;
-  outline: none;
+	border: none;
+	outline: none;
 }
 
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 .text-left {
-  text-align: left;
-  padding-left: 25px;
-  margin-bottom: 1rem;
+	text-align: left;
+	padding-left: 25px;
+	margin-bottom: 1rem;
 }
 
 .text-right {
-  text-align: right;
+	text-align: right;
 }
 
 .white-text {
-  color: var(--white-color);
+	color: var(--white-color);
 }
 
 .blue-text {
-  color: var(--blue-color);
+	color: var(--blue-color);
 }
 
 .green-text {
-  color: var(--green-color);
+	color: var(--green-color);
 }
 
 .yellow-text {
-  color: var(--yellow-color);
+	color: var(--yellow-color);
 }
 
 .red-text {
-  color: var(--red-color);
+	color: var(--red-color);
 }
 
 .black-text {
-  color: var(--black-color);
+	color: var(--black-color);
 }
 
 .bold-text {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .light-text {
-  color: #ccc;
-  font-weight: bold;
-  font-size: 12px;
+	color: #ccc;
+	font-weight: bold;
+	font-size: 12px;
 }
 
 .md-txt {
-  font-size: 21px;
-  font-weight: bold;
-  text-align: center;
-  padding: 0 40px;
+	font-size: 21px;
+	font-weight: bold;
+	text-align: center;
+	padding: 0 40px;
 }
 
 .sm-txt {
-  text-align: center;
-  padding: 0 40px;
+	text-align: center;
+	padding: 0 40px;
 }
 
 .xl-heading {
-  text-align: center;
-  font-size: 22px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.xxl-heading {
+	text-align: center;
+	font-size: 20px;
 }

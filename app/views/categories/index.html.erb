@@ -1,13 +1,13 @@
 <section class="page-position">
   <div>
-    <div class="d-flex justify-content-around align-items-center devise-class my-4">
+    <div class="d-flex justify-content-between align-items-center devise-class">
       <div class="d-flex justify-content-around align-items-center" >
         <div class="user-icon me-2">
           <%= link_to sign_out_path do %>
-          <div><%= fa_icon "user" %></div>
+          <div><%= fa_icon "user", class: 'link-icon'%></div>
           <% end %>
         </div>
-        <h3 class="md-heading">Hi <%= current_user.name.split(" ")[0] %></h3>
+        <h3 class="md-heading">Hi, <%= current_user.name.split(" ")[0].capitalize %></h3>
       </div>
 
       <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
@@ -20,31 +20,31 @@
           <h3 class="md-heading">Add Category</h3>
           <div class="user-icon ms-2">
             <%= link_to new_category_path do %>
-            <div><%= fa_icon "plus" %></div>
+            <div><%= fa_icon "plus", class: 'link-icon' %></div>
             <% end %>
           </div>
         </div>
       <% end %>
     </div>
-    <div>
+    <div class="cat-wrap">
       <div class="cat-card">
         <div>
           <h3 class="xl-heading mb-2 text-white bold-text">Initial Budget</h3>
-          <h3 class="xl-heading mb-2 text-white bold-text"> $<%= current_user.amount %> </h3>
+          <h3 class="xxl-heading mb-2 text-white bold-text"> $<%= current_user.amount %> </h3>
         </div>
  
         <div>
           <h3 class="xl-heading text-white mb-2 bold-text">Spent</h3>
-          <h3 class="xl-heading white-text bold-text"> $<%= @categories.map { |cat| cat.total_amount }.sum %></h3>
+          <h3 class="xxl-heading white-text bold-text"> $<%= @categories.map { |cat| cat.total_amount }.sum %></h3>
         </div>
 
         <div>
           <h3 class="xl-heading mb-2 text-white bold-text">Available</h3>
 
           <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
-          <h3 class="xl-heading red-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
+          <h3 class="xxl-heading red-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
           <% else %>
-          <h3 class="xl-heading white-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
+          <h3 class="xxl-heading white-text bold-text"> $<%= current_user.amount - @categories.map { |cat| cat.total_amount }.sum %></h3>
           <% end %>
         </div>
       </div>
@@ -53,13 +53,39 @@
       <% if @categories.size < 1 %>
         <p class="text-center md-heading mt-5" >There are no categories yet!! <br/> Please add a category</p>
       <% else %>
-      <h2 class="text-left md-heading"> Resent Transactions</h2>
+			<% @categories_group.each do |created_at, categories| %>
+				<div class="date-format">
+					<p class="mb-0 light-text">
+						<%= created_at.strftime("%d %b %Y") %>
+					</p>
+				</div>
         <ul class="cat-list md-heading">
-          <% @categories.each do |category| %>
+					<% categories.each do |category| %>
             <li>
               <%= link_to category_path(category.id) do %>
                 <div class="category-card">
                   <div class="category-inner">
+										<div>
+										<% if category.name[0].capitalize === 'F' %>
+											<div class="icon-wrapper icon-wrapper-F"><div class="icon icon-F"><%=category.name[0].capitalize%></div></div>
+										<% elsif category.name[0].capitalize === 'C' %>
+											<div class="icon-wrapper icon-wrapper-C"><div class="icon icon-C"><%=category.name[0].capitalize%></div></div>
+										<% elsif category.name[0].capitalize === 'M' %>
+											<div class="icon-wrapper icon-wrapper-M"><div class="icon icon-M"><%=category.name[0].capitalize%></div></div>
+										<% elsif category.name[0].capitalize === 'H' %>
+											<div class="icon-wrapper icon-wrapper-H"><div class="icon icon-H"><%=category.name[0].capitalize%></div></div>
+										<% elsif category.name[0].capitalize === 'S' %>
+											<div class="icon-wrapper icon-wrapper-S"><div class="icon icon-S"><%=category.name[0].capitalize%></div></div>
+										<% elsif category.name[0].capitalize === 'N'%>
+											<div class="icon-wrapper icon-wrapper-N"><div class="icon icon-N"><%=category.name[0].capitalize %></div></div>
+										<% elsif category.name[0].capitalize === 'A'%>
+											<div class="icon-wrapper icon-wrapper-A"><div class="icon icon-A"><%=category.name[0].capitalize %></div></div>
+										<% elsif category.name[0].capitalize === 'I'%>
+											<div class="icon-wrapper icon-wrapper-I"><div class="icon icon-I"><%=category.name[0].capitalize %></div></div>
+										<% else %>
+											<div class="icon-wrapper icon-wrapper-normal"><div class="icon icon-normal"><%=category.name[0].capitalize %></div></div>
+										<% end %>
+										</div>
                     <div>
                       <h2 class="mb-1 md-heading">
                         <%= category.name.capitalize %>
@@ -79,8 +105,9 @@
                 </div>
               <% end %>
             </li>
+						<% end %>
+						</ul>
           <% end %>
-        </ul>
       <% end %>
     </div>
   </div>

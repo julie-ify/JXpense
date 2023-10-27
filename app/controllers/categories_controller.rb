@@ -2,7 +2,8 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @categories = current_user.categories
+    @categories = current_user.categories.order(created_at: :desc)
+    @categories_group = @categories.group_by { |category| category.created_at.to_date }
   end
 
   def show
