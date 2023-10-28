@@ -56,7 +56,7 @@
 			<% @categories_group.each do |created_at, categories| %>
 				<div class="date-format">
 					<p class="mb-0 light-text">
-						<%= created_at.strftime("%d %b %Y") %>
+					<%= created_at.strftime("%d %b %Y") %>
 					</p>
 				</div>
         <ul class="cat-list md-heading">
@@ -91,7 +91,7 @@
                         <%= category.name.capitalize %>
                       </h2>
                       <p class="mb-0 light-text">
-                        <%= category.created_at.strftime("%d %b %Y") %>
+                        <%= local_time_ago(category.created_at, "%l:%M%P") %>
                       </p>
                     </div>
                   </div>

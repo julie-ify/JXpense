@@ -13,9 +13,16 @@
   justify-content: space-between;
   border-radius: 5px;
   align-items: center;
-  column-gap: 2rem;
-  padding: 20px;
-  // box-shadow: 1px 0 4px var(--blue-color);
+	flex-wrap: wrap;
+}
+
+.product-wrapper {
+	margin: 0 0;
+	display: flex;
+	flex-direction: column;
+	padding: 15px 0;
+	border-bottom: 1px solid rgba($color: #ccc, $alpha: 0.155);
+	row-gap: 1rem;
 }
 
 .date-flex {
@@ -23,4 +30,20 @@
   flex-direction: column;
   margin: 3rem 25px;
   row-gap: 20px;
+}
+
+.description-wrapper {
+	word-wrap: break-word;
+}
+
+.word-wrap {
+	word-break: break-all;
+	font-size: 13px;
+}
+
+a.product-link {
+	color: rgba($color: #ccc, $alpha: 1);
+	font-size: 15px;
+	font-weight: 400;
+	text-decoration: underline;
 }

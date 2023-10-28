@@ -15,16 +15,42 @@
 		<% end %>
 
       <div class="group mb-3">
-        <%= f.text_field :name, placeholder: "Name", autofocus: true, autocomplete: "name", class: "email-move" %>
+        <%= f.text_field :name, placeholder: "Name", autofocus: true, class: "email-move" %>
       </div>
-      <div class="group mb-3">
-        <%= f.text_field :amount, placeholder: "Amount", autofocus: true, autocomplete: "Amount", class: "email-move" %>
-      </div> 
 
       <div class="group mb-3">
-        <%= f.collection_select(:category_ids, Category.where(user: @current_user).all, :id, :name, { prompt: true }, { multiple: true })%>
-      </div>
+        <%= f.text_field :amount, placeholder: "Amount", class: "email-move" %>
+      </div> 
+
+      <div class="group">
+        <%= f.text_area :description, placeholder: "Description", rows: 5, cols: 40, class: "email-move", id: 'description' %>
+      </div> 
+
+			<div class="group mb-3 text-right">
+			<span id="charCount" class="xl-heading">Characters remaining: 140</span>
+			</div> 
+			
       <%= f.submit "Add", data: {disable_with: "Adding..."}, class: "signup-btn my-4 py-2" %>
     <% end %>
   </div>
 </div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const textArea = document.getElementById('description');
+		const charCount = document.getElementById('charCount');
+
+		textArea.addEventListener('input', function() {
+			const maxLength = 140;
+			const remaining = maxLength - textArea.value.length;
+			
+			charCount.textContent = `Characters remaining: ${remaining}`;
+
+			if(remaining < 0) {
+				charCount.classList.add('counter-red')
+			}else {
+				charCount.classList.remove('counter-red')
+			}
+		});
+	});
+</script>

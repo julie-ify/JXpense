@@ -10,21 +10,24 @@ Rails.application.routes.draw do
     root to: 'splash#first_screen', as: :unauthenticated_root
   end
 
+	
   get '/splash', to: 'splash#index'
   get '/splash/first_screen', to: 'splash#first_screen', as: 'splashx'
-
+	
   get '/sign_out', to: 'categories#sign_out', as: 'sign_out'
- 
-  resources :categories, only: [:index, :show, :new, :create, :update, :destroy, :edit] do
+	
+  resources :categories, only: [:index, :new, :create, :show, :update, :destroy, :edit] do
     resources :products, only: [:new, :create, :update, :destroy, :edit, :show]
   end
+	
+	get '*unmatched_route', to: 'errors#not_found'
 
-	authenticated :user do
-			# Catch-all route for any unmatched route
-		get '*path', to: 'categories#index'
-  end
+	# authenticated :user do
+	# 		# Catch-all route for any unmatched route
+	# 	get '*path', to: 'categories#index'
+  # end
 
-  unauthenticated :user do
-		get '*path', to: 'splash#index'
-  end
+  # unauthenticated :user do
+	# 	get '*path', to: 'splash#index'
+  # end
 end

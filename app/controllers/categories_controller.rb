@@ -7,9 +7,10 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @products = @category.products.order(created_at: :desc)
-    @categories = current_user.categories
+		@category = Category.find_by(id: params[:id])
+		@products = @category.products.order(created_at: :desc)
+		@products_group = @products.group_by { |product| product.created_at.to_date }
+		@categories = current_user.categories
   end
 
   def new
@@ -39,7 +40,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
 		if  @category.update(category_params)
-			redirect_to categories_path(@category), notice: 'Category was successfully updated!.'
+			redirect_to categories_path, notice: 'Category was successfully updated!.'
     else
       render :edit
     end
@@ -47,7 +48,8 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
+    @category.products.destroy_all
+		@category.destroy
 
     redirect_to categories_url, notice: 'Category was successfully deleted!'
   end

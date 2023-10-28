@@ -14,7 +14,7 @@
     <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
         <h3 class="red-text bold-text md-heading d-flex justify-content-end align-items-center px-4 pb-4">No available amount</h3>
       <% else %>
-      <div class="d-flex justify-content-end align-items-center px-4 pb-4">
+      <div class="d-flex justify-content-end align-items-center pb-5">
       <h3 class="md-heading">Add Product</h3>
       <div class="user-icon ms-2">
         <%= link_to new_category_product_path(@category.id) do %>
@@ -23,6 +23,9 @@
       </div>
       <% end %>
     </div>
+
+
+		
     <div class="colored-bg">
       <div class="cat-pro">
         <div class="category-inner">
@@ -31,7 +34,7 @@
               <%= @category.name.capitalize %>
             </h2>
             <p class="mb-0 black-text">
-              <%= @category.created_at.strftime("%d %b %Y") %>
+              <%= local_time(@category.created_at, "%d %b %Y") %>
             </p>
           </div>
         </div>
@@ -44,40 +47,53 @@
         </span>
       </div>
       <div class="reset">
-        <p><%= link_to 'Edit', edit_category_path(@category), method: 'get', class: "signup-btn-dark my-4 p-2" %></p>
-        <p><%= link_to 'Remove', category_path(@category), method: 'delete', data: { confirm: 'Are you sure?' }, class: "signup-btn-dark my-4 p-2" %></p>
+        <p><%= link_to 'Edit', edit_category_path(@category), method: 'get', class: "my-4 pe-2 category-link" %></p>
+        <p><%= link_to 'Remove', category_path(@category), method: 'delete', data: { confirm: 'Are you sure?' }, class: "my-4 category-link" %></p>
       </div>
     </div>
     <% if @products.empty? %>
       <p class="text-center fs-5 my-5 sm-heading">There are no products yet!</p>
     <% end %>
-    <ul>
-      <% @category.products.each do |product| %>
+
+
+
+
+
+
+		<% @products_group.each do |created_at, products| %>
+			<div class="date-format">
+				<p class="mb-0 light-text">
+					<%= created_at.strftime("%d %b %Y") %>
+				</p>
+			</div>
+
+			<ul>
+			<% products.each do |product| %>
         <li class="bold-text">
-          <div class="light-text px-4 pb-4">
-            <i class="far fa-calendar-alt"></i>
-            <%= product.created_at.strftime("%d %b %Y") %>
-          </div>
-          <div class="category-cardp">
-            <div class="product-card mb-3">
+          <div class="product-wrapper">
+            <div class="product-card">
               <div>
                 <%= product.name.capitalize %>
               </div>
               <div class="light-text">
-                <%= product.created_at.strftime("%r")%>
+							<%= local_time(product.created_at, "%l:%M%P") %>
               </div>
               <div class="red-text bold-text md-heading">
                 -$<%= product.amount %>
               </div>
             </div>
+						<div class="description-wrapper">
+							<p class= "word-wrap" ><%= product.description %></p>
+						</div>
             <div class="reset">
-              <p><%= link_to 'Edit', edit_category_product_path(@category.id, product.id), method: 'get', class: "signup-btn my-4 p-2" %></p>
-              <p><%= link_to 'Remove', category_product_path(@category.id, product.id), method: 'delete', data: { confirm: 'Are you sure?' }, class: "signup-btn my-4 p-2" %></p>
+              <p><%= link_to 'Edit', edit_category_product_path(@category.id, product.id), method: 'get', class: "my-4 product-link pe-2" %></p>
+              <p><%= link_to 'Remove', category_product_path(@category.id, product.id), method: 'delete', data: { confirm: 'Are you sure?' }, class: "my-4 product-link" %></p>
             </div>
           </div>
         </li>
       <% end %>
     </ul>
+		<% end %>
   </div>
 </section>
 

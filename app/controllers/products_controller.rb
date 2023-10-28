@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     @product.user = current_user
 
 		if @product.save
-				redirect_to category_path(@product.categories.first.id), notice: 'Product was successfully created!.'
+				redirect_to category_path(@category.id), notice: 'Product was successfully created!.'
 		else
 			render :new
 		end
@@ -46,6 +46,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :amount, category_ids: [])
+    params.require(:product).permit(:name, :amount, :description)
   end
 end

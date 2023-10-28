@@ -2,9 +2,7 @@ class Category < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
 
   belongs_to :user
-
-  has_many :payments
-  has_many :products, through: :payments
+  has_many :products
 
   def total_amount
     products.sum(:amount)

@@ -11,12 +11,12 @@
 	column-gap: 2rem;
 	padding: 15px 0;
 	align-items: center;
-	border-bottom: 1px solid rgba($color: #fafafa, $alpha: 1);
+	border-bottom: 1px solid rgba($color: #ccc, $alpha: 0.155);
 	justify-content: space-between;
 }
 
 .category-cardp {
-	margin: 0 25px 2rem;
+	margin: 0 0 2rem;
 	display: flex;
 	flex-direction: column;
 	border-radius: 5px;
@@ -25,7 +25,7 @@
 }
 
 .colored-bg {
-	margin: 0 25px 2rem;
+	margin: 0 0 2rem;
 	display: flex;
 	flex-direction: column;
 	border-radius: 5px;
@@ -222,5 +222,16 @@
 .date-format {
 	width: 100%;
 	padding: 10px 0;
-	background-color: rgba($color: #fafafa, $alpha: 0.2);
+	background-color: rgba($color: #fafafa, $alpha: 0.3);
+}
+
+.counter-red {
+	color: red;
+}
+
+a.category-link {
+	color: var(--black-color);;
+	font-size: 15px;
+	font-weight: 400;
+	text-decoration: underline;
 }
