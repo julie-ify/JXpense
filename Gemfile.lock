@@ -274,6 +274,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 2.7)
   local_time
+  nokogiri (= 1.12.5)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

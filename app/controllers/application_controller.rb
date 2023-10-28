@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-	rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   protected
 
@@ -18,10 +17,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-	private
+  private
 
-	def record_not_found
+  def record_not_found
     render 'errors/not_found', status: :not_found
   end
-	
 end

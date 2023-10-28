@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def new
     @category = Category.find_by(id: params[:category_id])
-		@product = @category.products.new()
+    @product = @category.products.new
   end
 
   def create
@@ -11,11 +11,11 @@ class ProductsController < ApplicationController
     @product = @category.products.build(product_params)
     @product.user = current_user
 
-		if @product.save
-				redirect_to category_path(@category.id), notice: 'Product was successfully created!.'
-		else
-			render :new
-		end
+    if @product.save
+      redirect_to category_path(@category.id), notice: 'Product was successfully created!.'
+    else
+      render :new
+    end
   end
 
   def edit
