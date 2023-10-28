@@ -15,7 +15,7 @@
  *= require font-awesome
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;500;700&display=swap');
 
 * {
 	padding: 0;
@@ -43,7 +43,7 @@ p {
 }
 
 body {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Manrope', sans-serif;
 	line-height: 1.5;
 	color: var(--black-color);
 	background-color: var(--bg-color);
@@ -124,8 +124,6 @@ ul {
 .sign-wrap {
 	min-height: 100vh;
 	background-color: var(--bg-color);
-	padding: 20px;
-	/* margin-top: 50px; */
 }
 
 .signup-btn {
@@ -149,7 +147,6 @@ ul {
 }
 
 .group {
-	/* display: flex; */
 	width: 100%;
 }
 
@@ -223,13 +220,18 @@ input::placeholder {
 	font-size: 12px;
 }
 
+.logout-text {
+	color: var(--black-color);
+	font-size: 20px;
+	text-decoration: underline;
+}
+
 .bold-text {
 	font-weight: bold;
 }
 
 .light-text {
 	color: #ccc;
-	font-weight: bold;
 	font-size: 12px;
 }
 

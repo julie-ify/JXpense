@@ -37,7 +37,6 @@ class ProductsController < ApplicationController
   def destroy
     @category = Category.find_by(id: params[:category_id])
     @product = @category.products.find(params[:id])
-
     @product.destroy
 
     redirect_to categories_url, notice: 'Product was successfully deleted!'

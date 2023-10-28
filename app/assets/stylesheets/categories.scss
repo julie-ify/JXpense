@@ -24,14 +24,20 @@
 	box-shadow: 1px 0 4px var(--blue-color);
 }
 
+.colored-bg-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px;
+	margin-bottom: 30px;
+}
+
 .colored-bg {
-	margin: 0 0 2rem;
 	display: flex;
 	flex-direction: column;
 	border-radius: 5px;
-	padding: 15px 20px;
-	box-shadow: 2px 2px 3px var(--black-color);
-	background-color: var(--blue-color);
+	padding: 13px;
+	box-shadow: 1px 1px 6px rgba($color: #ccc, $alpha: 0.3), -1px -1px 3px rgba($color: #ccc, $alpha: 0.3);
 }
 
 .reset {
@@ -43,7 +49,6 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 2rem;
 }
 
 .cat-list {
@@ -82,28 +87,28 @@
 }
 
 .icon-wrapper-normal {
-	background-color: #8E7DBE;
+	background-color: #8e7dbe;
 }
 .icon-wrapper-N {
-	background-color: #624CAB;
+	background-color: #624cab;
 }
 .icon-wrapper-F {
-	background-color: #C8963E;
+	background-color: #c8963e;
 }
 .icon-wrapper-S {
-	background-color: #9BD1E5
+	background-color: #9bd1e5;
 }
 .icon-wrapper-M {
-	background-color: #758ECD;
+	background-color: #758ecd;
 }
 .icon-wrapper-H {
 	background-color: rgb(29, 205, 29);
 }
 .icon-wrapper-C {
-	background-color: #B96AC9;
+	background-color: #b96ac9;
 }
 .icon-wrapper-A {
-	background-color: #D7BCE8;
+	background-color: #d7bce8;
 }
 .icon-wrapper-I {
 	background-color: #679436;
@@ -120,31 +125,31 @@
 }
 
 .icon-normal {
-	background-color: #F1E3D3;
+	background-color: #f1e3d3;
 }
 .icon-N {
-	background-color: #7189FF;
+	background-color: #7189ff;
 }
 .icon-F {
-	background-color: #E3C567;
+	background-color: #e3c567;
 }
 .icon-S {
-	background-color: #D1FAFF;
+	background-color: #d1faff;
 }
 .icon-M {
-	background-color: #C1CEFE;
+	background-color: #c1cefe;
 }
 .icon-H {
 	background-color: aquamarine;
 }
 .icon-C {
-	background-color: #E980FC;
+	background-color: #e980fc;
 }
 .icon-A {
-	background-color: #FDE2FF;
+	background-color: #fde2ff;
 }
 .icon-I {
-	background-color: #A5BE00;
+	background-color: #a5be00;
 }
 
 .btn {
@@ -159,17 +164,35 @@
 	height: 40px;
 	width: 40px;
 	font-size: 25px;
-	color: var(--black-color);
 	border-radius: 50%;
 	border: 1px solid var(--blue-color);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: var(--blue-color);
+}
+
+.add-icon {
+	height: 25px;
+	width: 25px;
+	font-size: 15px;
+	color: var(--white-color);
+	border-radius: 50%;
+	border: 1px solid var(--blue-color);
+	background-color: var(--blue-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 .md-heading {
 	font-size: 15px;
 	font-weight: bold;
+}
+
+.close {
+	padding: 30px 0;
 }
 
 .close a {
@@ -182,17 +205,41 @@
 }
 
 .cat-card {
-	background-color: var(--blue-color);
-	margin-bottom: 50px;
-	padding: 30px;
-	border-radius: 5px;
-	text-align: center;
-	box-shadow: 5px -5px var(--yellow-color);
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	border-bottom: 1px solid rgba($color: #ccc, $alpha: 0.155);
+	display: flex;
+	flex-direction: column;
 	align-items: flex-start;
-	justify-content: center;
+	justify-content: flex-start;
 	row-gap: 2rem;
+	padding-bottom: 30px;
+}
+
+.cat-first-grid, .cat-second-grid, .cat-third-grid {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.cat-third-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.cat-first-inner-grid, .cat-third-inner-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.cat-second-inner-grid {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border-radius: 3px;
+	padding: 13px;
+	box-shadow: 1px 1px 6px rgba($color: #ccc, $alpha: 0.3), -1px -1px 3px rgba($color: #ccc, $alpha: 0.3);
 }
 
 .group select {
@@ -216,7 +263,7 @@
 }
 
 .link-icon {
-	color: var(--blue-color);
+	color: var(--white-color);
 }
 
 .date-format {
@@ -226,12 +273,44 @@
 }
 
 .counter-red {
-	color: red;
+	color: var(--red-color);
 }
 
 a.category-link {
-	color: var(--black-color);;
+	color: var(--black-color);
 	font-size: 15px;
 	font-weight: 400;
 	text-decoration: underline;
 }
+
+.sub-heading-text {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.sm-heading-text {
+	font-size: 13px;
+}
+
+// Progess bar
+.progress-bar-wrapper {
+  width: 100%;
+  height: 6px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.progress-line {
+  height: 100%;
+}
+
+.progress-line.normal {
+	background-color: var(--blue-color);
+}
+
+.progress-line.overspent {
+	background-color: var(--red-color);
+}
+
+
+

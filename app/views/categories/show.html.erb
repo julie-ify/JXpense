@@ -1,56 +1,58 @@
 <section class="page-position" >
   <div>
-    <div class="mt-3 px-3 close"><%= link_to "X", categories_path %></div>
-    <div>
-      <div class="d-flex justify-content-around align-items-center">
-        <span class="nav-item">
-          <%= link_to categories_path do %>
-            <i class="fas fa-chevron-left text-white"></i>
-          <% end %>
-        </span>
-      </div>
-    </div>
-
-    <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
-        <h3 class="red-text bold-text md-heading d-flex justify-content-end align-items-center px-4 pb-4">No available amount</h3>
-      <% else %>
-      <div class="d-flex justify-content-end align-items-center pb-5">
-      <h3 class="md-heading">Add Product</h3>
-      <div class="user-icon ms-2">
-        <%= link_to new_category_product_path(@category.id) do %>
-        <div><%= fa_icon "plus", class: 'link-icon' %></div>
-        <% end %>
-      </div>
-      <% end %>
-    </div>
+		<div class="close">
+			<%= link_to categories_path do %>
+				<i class="fas fa-arrow-left"></i>
+			<% end %>
+		</div>
 
 
-		
-    <div class="colored-bg">
-      <div class="cat-pro">
-        <div class="category-inner">
-          <div class="category-flex">
-            <h2 class="mb-1 md-heading white-text">
-              <%= @category.name.capitalize %>
-            </h2>
-            <p class="mb-0 black-text">
-              <%= local_time(@category.created_at, "%d %b %Y") %>
-            </p>
-          </div>
-        </div>
-        <span class="red-text bold-text">
-          <% if @category.total_amount > 1 %>
-            <h3 class="md-heading red-text bold-text"> -$<%= @category.total_amount %></h3>
-          <% else %>
-            <h3 class="md-heading black-text bold-text"> $<%= @category.total_amount %></h3>
-          <% end %>
-        </span>
-      </div>
-      <div class="reset">
-        <p><%= link_to 'Edit', edit_category_path(@category), method: 'get', class: "my-4 pe-2 category-link" %></p>
-        <p><%= link_to 'Remove', category_path(@category), method: 'delete', data: { confirm: 'Are you sure?' }, class: "my-4 category-link" %></p>
-      </div>
-    </div>
+    <div class="colored-bg-wrapper">
+			<div class="colored-bg">
+				<div class="cat-pro">
+					<div class="category-inner">
+						<div class="category-flex">
+							<h2 class="mb-1 md-heading">
+								<%= @category.name.capitalize %>
+							</h2>
+							<p class="mb-0 light-text">
+								<%= local_time(@category.created_at, "%d %b %Y") %>
+							</p>
+						</div>
+					</div>
+					<div class="category-flex">
+						<h2 class="mb-1 md-heading">
+							Spent
+						</h2>
+						<span class="red-text bold-text">
+							<% if @category.total_amount > 1 %>
+								<h3 class="md-heading red-text bold-text"> -$<%= @category.total_amount %></h3>
+							<% else %>
+								<h3 class="md-heading black-text bold-text"> $<%= @category.total_amount %></h3>
+							<% end %>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="cat-second-grid">
+				<div class="cat-second-inner-grid">
+					<div class="add-icon">
+						<%= link_to new_category_product_path(@category.id) do %>
+							<div><%= fa_icon "plus", class: 'link-icon' %></div>
+						<% end %>
+					</div>
+					<h3 class="md-heading">Add Product</h3>
+				</div>
+				<div class="cat-second-inner-grid">
+					<div class="add-icon">
+						<%= link_to edit_category_path(@category), method: 'get' do %>
+							<div><%= fa_icon "plus", class: 'link-icon' %></div>
+						<% end %>
+					</div>
+					<h3 class="md-heading">Edit</h3>
+				</div>
+			</div>
+		</div>
     <% if @products.empty? %>
       <p class="text-center fs-5 my-5 sm-heading">There are no products yet!</p>
     <% end %>
@@ -69,10 +71,10 @@
 
 			<ul>
 			<% products.each do |product| %>
-        <li class="bold-text">
+        <li>
           <div class="product-wrapper">
             <div class="product-card">
-              <div>
+              <div class="bold-text">
                 <%= product.name.capitalize %>
               </div>
               <div class="light-text">
@@ -83,7 +85,7 @@
               </div>
             </div>
 						<div class="description-wrapper">
-							<p class= "word-wrap" ><%= product.description %></p>
+							<p class= "word-wrap"><%= product.description %></p>
 						</div>
             <div class="reset">
               <p><%= link_to 'Edit', edit_category_product_path(@category.id, product.id), method: 'get', class: "my-4 product-link pe-2" %></p>

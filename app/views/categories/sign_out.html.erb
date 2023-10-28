@@ -1,9 +1,13 @@
-<div class="mt-5 px-5 close"><%= link_to "X", categories_path %></div>
-<div class="d-flex justify-content-center flex-column align-items-center gap-4 mt-5">
-	<h3 class="close" >
-		<%= link_to "Update account", edit_user_registration_path %>
+<div class="close">
+	<%= link_to categories_path do %>
+		<i class="fas fa-arrow-left"></i>
+	<% end %>
+</div>
+<div class="d-flex justify-content-center flex-column align-items-start gap-2">
+	<h3>
+		<%= link_to "Update account", edit_user_registration_path, class: "logout-text"%>
 	</h3>
-	<h3 class="close" >
-		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	<h3>
+		<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout-text"  %>
 	</h3>
 </div>

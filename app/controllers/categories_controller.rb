@@ -4,6 +4,8 @@ class CategoriesController < ApplicationController
   def index
     @categories = current_user.categories.order(created_at: :desc)
     @categories_group = @categories.group_by { |category| category.created_at.to_date }
+    @amount_spent = @categories.map(&:total_amount).sum
+    @available_amount = current_user.amount - @categories.map(&:total_amount).sum
   end
 
   def show
@@ -22,13 +24,10 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     current_user.categories << @category
-
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to categories_url, notice: 'Category was successfully created!.' }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @category.save
+      redirect_to categories_url, notice: 'Category was successfully created!.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -50,7 +49,6 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.products.destroy_all
     @category.destroy
-
     redirect_to categories_url, notice: 'Category was successfully deleted!'
   end
 
