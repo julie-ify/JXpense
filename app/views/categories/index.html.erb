@@ -15,8 +15,8 @@
       <div class="cat-card">
 				<div class="cat-first-grid">
 					<div class="cat-first-inner-grid">
-					<h3 class="sm-heading-text">Initial Budget</h3>
-					<h3 class="sub-heading-text"> <%= number_to_currency(current_user.amount, unit: '$', delimiter: ',', precision: 2) %> </h3>
+					<h3 class="sm-heading-text">Cumulative Budget</h3>
+					<h3 class="sub-heading-text"> <%= number_to_currency(current_user.budget.amount, unit: '$', delimiter: ',', precision: 2) %> </h3>
 					<h3 class="sm-heading-text light-text">United states dollar</h3>
 					</div>
 	
@@ -37,7 +37,7 @@
 					</div>
 					<div class="cat-second-inner-grid">
 						<div class="add-icon">
-							<%= link_to new_category_path do %>
+							<%= link_to edit_budget_path(@budget) do %>
 							<div><%= fa_icon "arrow-up", class: 'link-icon' %></div>
 							<% end %>
 						</div>
@@ -51,12 +51,18 @@
 
 						<% if @available_amount < 1 %>
 						<h3 class="sub-heading-text red-text"> <%= number_to_currency(@available_amount , unit: '$', delimiter: ',', precision: 2) %></h3>
+						<div class="d-flex align-items-center justify-content-start sm-heading-text gap-2">
+							<span> (top up)</span>
+							<div class="spinner-grow text-danger" role="status">
+								<span class="visually-hidden">Loading...</span>
+							</div>
+						</div>
 						<% else %>
 						<h3 class="sub-heading-text"><%= number_to_currency(@available_amount , unit: '$', delimiter: ',', precision: 2)%></h3>
 						<% end %>
 					</div>
 					<%= content_tag(:div, class: 'progress-bar-wrapper') do %>
-						<%= content_tag(:div, '', class: "progress-line progress-bar-striped progress-bar-animated #{@available_amount < 1 ? 'overspent' : 'normal'}", style: "width: #{(100 * @available_amount / current_user.amount)}%") %>
+						<%= content_tag(:div, '', class: "progress-line progress-bar-striped progress-bar-animated #{@available_amount < 1 ? 'overspent' : 'normal'}", style: "width: #{(100 * @available_amount / current_user.budget.amount)}%") %>
 					<% end %>
 				</div>
       </div>

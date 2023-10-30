@@ -5,7 +5,8 @@ class CategoriesController < ApplicationController
     @categories = current_user.categories.order(created_at: :desc)
     @categories_group = @categories.group_by { |category| category.created_at.to_date }
     @amount_spent = @categories.map(&:total_amount).sum
-    @available_amount = current_user.amount - @categories.map(&:total_amount).sum
+    @budget = Budget.find_or_create_by!(user_id: current_user.id)
+    @available_amount = current_user.budget.amount - @categories.map(&:total_amount).sum
   end
 
   def show

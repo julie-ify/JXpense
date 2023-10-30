@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :new, :create, :show, :update, :destroy, :edit] do
     resources :products, only: [:new, :create, :update, :destroy, :edit, :show]
   end
+
+	resources :budgets, only: [:edit, :update, :show]
 	
 	get '*unmatched_route', to: 'errors#not_found'
 

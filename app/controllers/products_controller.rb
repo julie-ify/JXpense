@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
     @product = @category.products.find(params[:id])
 
     if @product.update(product_params)
-      redirect_to categories_path, notice: 'Product was successfully updated!.'
+      redirect_to category_path(@category), notice: 'Product was successfully updated!.'
     else
       render :edit
     end
