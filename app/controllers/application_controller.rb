@@ -22,9 +22,4 @@ class ApplicationController < ActionController::Base
   def record_not_found
     render 'errors/not_found', status: :not_found
   end
-
-	def conversion(budget, amount_spent_in_usd)
-		budget_currency = budget.exchange_rate.rate_in_usd
-		amount_spent_in_usd * budget_currency
-	end
 end
