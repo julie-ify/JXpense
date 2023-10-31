@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_29_231211) do
+ActiveRecord::Schema.define(version: 2023_10_30_041620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "budgets", force: :cascade do |t|
-    t.float "amount"
+    t.float "usd_amount"
     t.bigint "exchange_rate_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "local_amount"
     t.index ["exchange_rate_id"], name: "index_budgets_on_exchange_rate_id"
     t.index ["user_id"], name: "index_budgets_on_user_id"
   end
@@ -37,6 +38,8 @@ ActiveRecord::Schema.define(version: 2023_10_29_231211) do
     t.float "rate_in_usd"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "symbol"
   end
 
   create_table "products", force: :cascade do |t|

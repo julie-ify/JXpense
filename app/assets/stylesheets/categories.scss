@@ -37,7 +37,8 @@
 	flex-direction: column;
 	border-radius: 5px;
 	padding: 13px;
-	box-shadow: 1px 1px 6px rgba($color: #ccc, $alpha: 0.3), -1px -1px 3px rgba($color: #ccc, $alpha: 0.3);
+	box-shadow: 1px 1px 6px rgba($color: #ccc, $alpha: 0.3),
+		-1px -1px 3px rgba($color: #ccc, $alpha: 0.3);
 }
 
 .reset {
@@ -214,7 +215,9 @@
 	padding-bottom: 30px;
 }
 
-.cat-first-grid, .cat-second-grid, .cat-third-grid {
+.cat-first-grid,
+.cat-second-grid,
+.cat-third-grid {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
@@ -227,7 +230,8 @@
 	gap: 10px;
 }
 
-.cat-first-inner-grid, .cat-third-inner-grid {
+.cat-first-inner-grid,
+.cat-third-inner-grid {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
@@ -239,7 +243,8 @@
 	gap: 10px;
 	border-radius: 3px;
 	padding: 13px;
-	box-shadow: 1px 1px 6px rgba($color: #ccc, $alpha: 0.3), -1px -1px 3px rgba($color: #ccc, $alpha: 0.3);
+	box-shadow: 1px 1px 6px rgba($color: #ccc, $alpha: 0.3),
+		-1px -1px 3px rgba($color: #ccc, $alpha: 0.3);
 }
 
 .group select {
@@ -296,14 +301,14 @@ a.category-link {
 
 // Progess bar
 .progress-bar-wrapper {
-  width: 100%;
-  height: 6px;
-  background-color: #f0f0f0;
-  margin-bottom: 10px;
+	width: 100%;
+	height: 6px;
+	background-color: #f0f0f0;
+	margin-bottom: 10px;
 }
 
 .progress-line {
-  height: 100%;
+	height: 100%;
 }
 
 .progress-line.normal {
@@ -318,5 +323,11 @@ a.category-link {
 	padding: 30px 0;
 }
 
+.currency-btn {
+	background-color: var(--blue-color);
+	border: 1px solid #ccc;
+	width: 100%;
+	height: 100%;
+	padding: 2px 5px;
 
-
+}

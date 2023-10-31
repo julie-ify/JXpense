@@ -4,9 +4,11 @@ class CategoriesController < ApplicationController
   def index
     @categories = current_user.categories.order(created_at: :desc)
     @categories_group = @categories.group_by { |category| category.created_at.to_date }
-    @amount_spent = @categories.map(&:total_amount).sum
+    amount_spent_in_usd = @categories.map(&:total_amount).sum
     @budget = Budget.find_or_create_by!(user_id: current_user.id)
-    @available_amount = current_user.budget.amount - @categories.map(&:total_amount).sum
+    @available_amount = current_user.budget.local_amount - conversion(@budget, amount_spent_in_usd)
+		@currency_details = @budget.exchange_rate
+		@amount_spent = conversion(@budget, amount_spent_in_usd)
   end
 
   def show
@@ -14,6 +16,10 @@ class CategoriesController < ApplicationController
     @products = @category.products.order(created_at: :desc)
     @products_group = @products.group_by { |product| product.created_at.to_date }
     @categories = current_user.categories
+
+		@budget = Budget.find_by!(user_id: current_user.id)
+		@currency_details = @budget.exchange_rate
+		@product_amount = @category.total_amount * @currency_details.rate_in_usd
   end
 
   def new

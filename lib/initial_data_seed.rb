@@ -11,7 +11,7 @@ class InitialDataSeed
     user = User.create!({ name: 'test user', email: 'testuser@gmail.com', password: 'testuser',
                           password_confirmation: 'testuser' })
     budget = Budget.find_or_create_by!(user_id: user.id)
-    budget.update(amount: 100_000)
+    budget.update(usd_amount: 100000, local_amount: 100000)
 
     Category.create!([{ name: 'Internet', user_id: 1, created_at: 1.day.ago },
                       { name: 'Airtime', user_id: 1, created_at: 1.day.ago },

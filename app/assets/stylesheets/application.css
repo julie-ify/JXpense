@@ -83,6 +83,9 @@ h1 {
 }
 
 .devise-class {
+	display: flex;
+	align-items: center;
+	width: 100%;
 	padding: 30px 0 30px;
 	text-align: center;
 }
@@ -217,7 +220,7 @@ input::placeholder {
 
 .black-text {
 	color: var(--black-color);
-	font-size: 12px;
+	/* font-size: 12px; */
 }
 
 .logout-text {

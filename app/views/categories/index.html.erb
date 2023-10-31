@@ -9,6 +9,17 @@
         </div>
         <h3 class="md-heading">Hi, <%= current_user.name.split(" ")[0].capitalize %></h3>
       </div>
+
+			<%= form_with model: @budget, id: 'currencyForm' do |form| %>
+				<div class="cat-second-grid">
+					<div class="cat-second-inner-grid group">
+						<div>
+							<%= form.submit "Submit", data: {disable_with: "Adding..."}, class: 'currency-btn' %>
+						</div>
+						<%= form.collection_select :exchange_rate_id, ExchangeRate.pluck(:currency, :id), :last, :first, class: "a" %>
+					</div>
+				</div>
+			<% end %>
     </div>
 
     <div class="cat-wrap">
@@ -16,13 +27,15 @@
 				<div class="cat-first-grid">
 					<div class="cat-first-inner-grid">
 					<h3 class="sm-heading-text">Cumulative Budget</h3>
-					<h3 class="sub-heading-text"> <%= number_to_currency(current_user.budget.amount, unit: '$', delimiter: ',', precision: 2) %> </h3>
-					<h3 class="sm-heading-text light-text">United states dollar</h3>
+					<h3 class="sm-heading-text">(<%= @currency_details.name %>)</h3>
+					<h3 class="sub-heading-text"> <%= number_to_currency(current_user.budget.local_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %> </h3>
+					
+					<h3 class="sm-heading-text light-text">USD<%= number_to_currency(current_user.budget.usd_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
 					</div>
 	
 					<div class="cat-first-inner-grid">
 						<h3 class="sm-heading-text">Spent</h3>
-						<h3 class="sub-heading-text"> <%= number_to_currency(@amount_spent, unit: '$', delimiter: ',', precision: 2) %></h3>
+						<h3 class="sub-heading-text"> <%= number_to_currency(@amount_spent, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
 					</div>
 
 				</div>
@@ -50,7 +63,7 @@
 						<h3 class="sm-heading-text">Available to Spend</h3>
 
 						<% if @available_amount < 1 %>
-						<h3 class="sub-heading-text red-text"> <%= number_to_currency(@available_amount , unit: '$', delimiter: ',', precision: 2) %></h3>
+						<h3 class="sub-heading-text red-text"> <%= number_to_currency(@available_amount , unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
 						<div class="d-flex align-items-center justify-content-start sm-heading-text gap-2">
 							<span> (top up)</span>
 							<div class="spinner-grow text-danger" role="status">
@@ -58,11 +71,11 @@
 							</div>
 						</div>
 						<% else %>
-						<h3 class="sub-heading-text"><%= number_to_currency(@available_amount , unit: '$', delimiter: ',', precision: 2)%></h3>
+						<h3 class="sub-heading-text"><%= number_to_currency(@available_amount , unit: @currency_details.symbol, delimiter: ',', precision: 2)%></h3>
 						<% end %>
 					</div>
 					<%= content_tag(:div, class: 'progress-bar-wrapper') do %>
-						<%= content_tag(:div, '', class: "progress-line progress-bar-striped progress-bar-animated #{@available_amount < 1 ? 'overspent' : 'normal'}", style: "width: #{(100 * @available_amount / current_user.budget.amount)}%") %>
+						<%= content_tag(:div, '', class: "progress-line progress-bar-striped progress-bar-animated #{@available_amount < 1 ? 'overspent' : 'normal'}", style: "width: #{(100 * @available_amount / current_user.budget.local_amount)}%") %>
 					<% end %>
 				</div>
       </div>
@@ -116,9 +129,9 @@
                   </div>
                   <span class="bold-text">
                     <% if category.total_amount <= 0 %>
-                      <h3 class="md-heading black-text bold-text"><%= number_to_currency(category.total_amount, unit: '$', delimiter: ',', precision: 2) %></h3>
+                      <h3 class="md-heading black-text bold-text"><%= number_to_currency(category.total_amount * @currency_details.rate_in_usd, unit: @currency_details.symbol, delimiter: ',', precision: 0) %></h3>
                     <% else %>
-                      <h3 class="md-heading red-text bold-text"> -<%= number_to_currency(category.total_amount, unit: '$', delimiter: ',', precision: 2) %></h3>
+                      <h3 class="md-heading red-text bold-text">-<%= number_to_currency(category.total_amount * @currency_details.rate_in_usd, unit: @currency_details.symbol, delimiter: ',', precision: 0) %></h3>
                     <% end %>
                   </span>
                 </div>

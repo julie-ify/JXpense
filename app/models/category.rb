@@ -9,6 +9,6 @@ class Category < ApplicationRecord
   end
 
   def total
-    user.budget.amount - products.sum(:amount)
+    user.budget.local_amount - products.sum(:amount)
   end
 end

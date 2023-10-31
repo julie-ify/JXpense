@@ -20,16 +20,11 @@
 						</ul>
 					</div>
 				<% end %>
-	
-				<div class="form-grid">
-					<div class="group mb-3">
-						<%= f.collection_select :exchange_rate_id, ExchangeRate.pluck(:currency, :id), :last, :first, class: "email-move" %>
-					</div>
 
-					<div class="group mb-3">
-						<%= f.number_field :amount, placeholder: "Amount", class: "email-move" %>
-					</div>
+				<div class="group mb-3">
+					<%= f.number_field :usd_amount, placeholder: "Amount", class: "email-move" %>
 				</div>
+
 		
 				<%= f.submit "Add", data: {disable_with: "Adding..."}, class: "signup-btn my-4 py-2" %>
 			<% end %>

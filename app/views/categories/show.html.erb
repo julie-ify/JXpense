@@ -26,9 +26,9 @@
 						</h2>
 						<span class="red-text bold-text">
 							<% if @category.total_amount > 1 %>
-								<h3 class="md-heading red-text bold-text"> -$<%= @category.total_amount %></h3>
+								<h3 class="md-heading red-text bold-text"> <%= number_to_currency(@product_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
 							<% else %>
-								<h3 class="md-heading black-text bold-text"> $<%= @category.total_amount %></h3>
+								<h3 class="md-heading black-text bold-text"><%= number_to_currency(@product_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
 							<% end %>
 						</span>
 					</div>
@@ -81,7 +81,7 @@
 							<%= local_time(product.created_at, "%l:%M%P") %>
               </div>
               <div class="red-text bold-text md-heading">
-                -$<%= product.amount %>
+							<%= number_to_currency(product.amount * @currency_details.rate_in_usd, unit: @currency_details.symbol, delimiter: ',', precision: 2) %>
               </div>
             </div>
 						<div class="description-wrapper">
