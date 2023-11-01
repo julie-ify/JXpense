@@ -14,22 +14,13 @@ Rails.application.routes.draw do
   get '/splash', to: 'splash#index'
   get '/splash/first_screen', to: 'splash#first_screen', as: 'splashx'
 	
-  get '/sign_out', to: 'categories#sign_out', as: 'sign_out'
+  get '/user_account', to: 'categories#user_account', as: 'user_account'
 	
   resources :categories, only: [:index, :new, :create, :show, :update, :destroy, :edit] do
     resources :products, only: [:new, :create, :update, :destroy, :edit, :show]
   end
 
-	resources :budgets, only: [:edit, :update, :show, :new, :create, :index]
+	resources :budgets, only: [:edit, :update, :create]
 	
 	get '*unmatched_route', to: 'errors#not_found'
-
-	# authenticated :user do
-	# 		# Catch-all route for any unmatched route
-	# 	get '*path', to: 'categories#index'
-  # end
-
-  # unauthenticated :user do
-	# 	get '*path', to: 'splash#index'
-  # end
 end

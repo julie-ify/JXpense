@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50, minimum: 1 }
 
   belongs_to :user
   has_many :products

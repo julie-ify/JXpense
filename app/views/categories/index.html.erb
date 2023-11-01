@@ -1,7 +1,7 @@
 <section class="page-position">
 <% if @budget.nil? %>
-	<div class="sign-wrap">
-    <h3 class="md-heading text-center mb-3">Top up Budget</h3>
+	<div class="sign-wrap calulated-top mt-3">
+    <h3 class="md-heading text-center mb-3">Add Initial Budget to Proceed</h3>
 		<div class="fs-4 sign-card">
 			<%= form_with model: Budget.new  do |f| %>
 
@@ -36,7 +36,7 @@
     <div class="d-flex justify-content-between align-items-center devise-class">
       <div class="d-flex justify-content-around align-items-center" >
         <div class="user-icon me-2">
-          <%= link_to sign_out_path do %>
+          <%= link_to user_account_path do %>
           <div><%= fa_icon "user", class: 'link-icon'%></div>
           <% end %>
         </div>
@@ -62,22 +62,22 @@
 
 				</div>
 				<div class="cat-second-grid">
-					<div class="cat-second-inner-grid">
-						<div class="add-icon">
-							<%= link_to new_category_path do %>
-							<div><%= fa_icon "plus", class: 'link-icon' %></div>
-							<% end %>
+					<%= link_to new_category_path do %>
+						<div class="cat-second-inner-grid">
+							<div class="add-icon">
+								<div><%= fa_icon "plus", class: 'link-icon' %></div>
+							</div>
+							<h3 class="md-heading">Add Category</h3>
 						</div>
-						<h3 class="md-heading">Add Category</h3>
-					</div>
-					<div class="cat-second-inner-grid">
-						<div class="add-icon">
-							<%= link_to edit_budget_path(@budget) do %>
-							<div><%= fa_icon "arrow-up", class: 'link-icon' %></div>
-							<% end %>
+					<% end %>
+					<%= link_to edit_budget_path(@budget) do %>
+						<div class="cat-second-inner-grid">
+							<div class="add-icon">
+								<div><%= fa_icon "arrow-up", class: 'link-icon' %></div>
+							</div>
+							<h3 class="md-heading">Top up</h3>
 						</div>
-						<h3 class="md-heading">Top up</h3>
-					</div>
+					<% end %>
 				</div>
 
 				<div class="cat-third-grid">

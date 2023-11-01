@@ -36,21 +36,28 @@
 </div>
 
 <script>
-	document.addEventListener('DOMContentLoaded', function() {
+	function call(){
 		const textArea = document.getElementById('description');
 		const charCount = document.getElementById('charCount');
-
-		textArea.addEventListener('input', function() {
+		if(textArea && charCount) {
 			const maxLength = 140;
-			const remaining = maxLength - textArea.value.length;
 			
-			charCount.textContent = `Characters remaining: ${remaining}`;
+			textArea.addEventListener('input', function() {
+				const remaining = maxLength - textArea.value.length;
+				charCount.textContent = `Characters remaining: ${remaining}`;
 
-			if(remaining < 0) {
-				charCount.classList.add('counter-red')
-			}else {
-				charCount.classList.remove('counter-red')
-			}
-		});
-	});
+				if(remaining < 0) {
+					charCount.classList.add('counter-red')
+				}else {
+					charCount.classList.remove('counter-red')
+				}
+			});
+
+			const initialLength = textArea.value.length;
+			charCount.textContent = `Characters remaining: ${maxLength - initialLength}`;
+		}
+	}
+	call()
+
+	window.addEventListener('popstate', call);
 </script>

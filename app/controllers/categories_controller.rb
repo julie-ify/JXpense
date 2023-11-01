@@ -15,12 +15,17 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(id: params[:id])
-    @products = @category.products.order(created_at: :desc)
-    @products_group = @products.group_by { |product| product.created_at.to_date }
     @categories = current_user.categories
-
     @budget = Budget.find_by!(user_id: current_user.id)
     @currency_details = @budget.exchange_rate
+
+    if params[:search]
+      @products = @category.products.where('name ilike ?', "%#{params[:search]}%").order(created_at: :desc)
+      @products_group = @products.group_by { |product| product.created_at.to_date }
+    else
+      @products = @category.products.order(created_at: :desc)
+      @products_group = @products.group_by { |product| product.created_at.to_date }
+    end
   end
 
   def new
@@ -58,7 +63,7 @@ class CategoriesController < ApplicationController
     redirect_to categories_url, notice: 'Category was successfully deleted!'
   end
 
-  def sign_out; end
+  def user_account; end
 
   private
 
