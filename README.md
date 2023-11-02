@@ -2,7 +2,7 @@
 
 > JXpense is a ruby on rails mobile web-based application that helps you keep track of your expenses and income. No install required, and very user friendly.
 
-# Demo Link
+# Live Link
 
 Click [here](https://budget-app-ulsh.onrender.com/) to view the website online.
 
@@ -19,11 +19,13 @@ To get a local copy up and running follow these simple steps.
 - You can clone this repo by typing `git clone https://github.com/julie-ify/Budget-app.git` on your terminal.
 
 - Type `cd Budget-app` to access the project on the terminal.
-- Run `bundle install` to install all the required dependancies.
+- Open the project in your code editor
+- Run `bundle install` to install all the required gems
+- Run `rake db:setup` to setup your database
+- Run `rails s` to start a development server
+- Run `rubocop && rubocop -A` to check for and fix formatting errors.
 
-- Run `rails s` to start a development server.
-
-# Testing
+# Integration/Unit Testing
 
 `rspec spec` will run all the tests.
 
@@ -31,13 +33,13 @@ Also, you can run `rspec spec/` to run specific tests.
 
 You can also run `RAILS_ENV=test rspec spec/` to run the tests in test mode.
 
-## Errors
+# Manual Testing
 
-If you encounter any errors, run the following commands.
+If you would like to test the app using a test user account which has seed data
 
-- Run `rake db:drop db:create db:migrate` to drop, create and migrate a new database.
-
-- Run `rubocop && rubocop -A` to check for and fix formatting errors.
+#### Login Details
+- email: `testuser@gmail.com`
+- password: `testuser`
 
 # This project was built with
 
