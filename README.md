@@ -2,21 +2,17 @@
 
 # Budget-app project
 
-> This is a ruby on rails mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+> JXpense is a ruby on rails mobile web-based application that helps you keep track of your expenses and income. No install required, and very user friendly.
 
 # Demo Link
 
-Click [here](https://juliana-budget-app.herokuapp.com/) to view the website online.
-
-# Video presentation Link
-
-Click [here](https://www.loom.com/share/25d0142d8c6a4eabbafccec9af3158cb)
+Click [here](https://budget-app-ulsh.onrender.com/) to view the website online.
 
 # Screenshots
 
 |            Splash Screen             |              SignUp/In               | Category Page                         | Product Page                         |
 | :----------------------------------: | :----------------------------------: | ------------------------------------- | ------------------------------------ |
-| ![](./app/assets/images/splash1.png) | ![](./app/assets/images/splash2.png) | ![](./app/assets/images/category.png) | ![](./app/assets/images/product.png) |
+| ![](./app/assets/images/budget-splash.png) | ![](./app/assets/images/budget-auth.png) | ![](./app/assets/images/budget-home-page.png) | ![](./app/assets/images/budget-products-home.png) |
 
 # Getting Started
 
@@ -43,7 +39,7 @@ If you encounter any errors, run the following commands.
 
 - Run `rake db:drop db:create db:migrate` to drop, create and migrate a new database.
 
-- Run `rubocop && rubocop -A` to check for and fix code errors.
+- Run `rubocop && rubocop -A` to check for and fix formatting errors.
 
 # This project was built with
 
@@ -66,7 +62,8 @@ If you encounter any errors, run the following commands.
 👤 **Juliana Ifionu**
 
 - GitHub: [juliana-Ifionu](https://github.com/julie-ify)
-- LinkedIn: [Juliana Ifionu](https://www.linkedin.com/in/e-ifionu/)
+- LinkedIn: [Juliana Ifionu](https://www.linkedin.com/in/julianaifionu/)
+- Twitter: [Juliana Ifionu](https://twitter.com/juliana_ifionu)
 
 # 🤝 Contributing
 
@@ -81,7 +78,8 @@ Give a ⭐️ if you like this project!
 # Acknowledgement
 
 - Original design idea by [Gregoire Vella on Behance..](https://www.behance.net/gregoirevella)
-- A big thanks to [@microverseinc](https://github.com/microverseinc).
+
+- Improved design by me
 
 # 📝 License
 
