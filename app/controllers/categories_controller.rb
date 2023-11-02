@@ -19,13 +19,12 @@ class CategoriesController < ApplicationController
     @budget = Budget.find_by!(user_id: current_user.id)
     @currency_details = @budget.exchange_rate
 
-    if params[:search]
-      @products = @category.products.where('name ilike ?', "%#{params[:search]}%").order(created_at: :desc)
-      @products_group = @products.group_by { |product| product.created_at.to_date }
-    else
-      @products = @category.products.order(created_at: :desc)
-      @products_group = @products.group_by { |product| product.created_at.to_date }
-    end
+    @products = if params[:search]
+                  @category.products.where('name ilike ?', "%#{params[:search]}%").order(created_at: :desc)
+                else
+                  @category.products.order(created_at: :desc)
+                end
+    @products_group = @products.group_by { |product| product.created_at.to_date }
   end
 
   def new
