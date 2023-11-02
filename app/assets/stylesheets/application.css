@@ -189,6 +189,20 @@ ul {
 	outline: 1px solid var(--blue-color);
 }
 
+.search-btn {
+	background-color: var(--blue-color);
+	border: none;
+	width: 40%;
+	color: var(--white-color);
+}
+
+.all-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20%;
+}
+
 input::placeholder {
 	display: none;
 	font-size: 15px;
@@ -263,6 +277,7 @@ input::placeholder {
 .sm-txt {
 	text-align: center;
 	padding: 0 40px;
+	font-size: 12px;
 }
 
 .xl-heading {

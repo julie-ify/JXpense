@@ -42,18 +42,29 @@
 
 .search-card {
 	display: flex;
-	// flex-wrap: wrap;
 	gap: 20px;
 	width: 100%;
 	justify-content: space-between;
 }
 
+.search-card-wrap {
+	display: flex;
+	gap: 20px;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.search-card-wrap form {
+	width: 80%;
+}
+
 .search-form-grid {
 	display: flex;
+	width: 100%;
 }
 
 .colored-bg {
-	width: 60%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	border-radius: 5px;
@@ -141,6 +152,9 @@
 .icon-wrapper-I {
 	background-color: #679436;
 }
+.icon-wrapper-G {
+	background-color: #1B4965;
+}
 
 .icon {
 	width: 30px;
@@ -178,6 +192,9 @@
 }
 .icon-I {
 	background-color: #a5be00;
+}
+.icon-G {
+	background-color: #CAE9FF;
 }
 
 .btn {

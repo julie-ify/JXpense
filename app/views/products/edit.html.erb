@@ -49,7 +49,7 @@
 			
 			textArea.addEventListener('input', function() {
 				const remaining = maxLength - textArea.value.length;
-				charCount.textContent = `Characters remaining: ${remaining}`;
+				charCount.textContent = `characters remaining: ${remaining}`;
 
 				if(remaining < 0) {
 					charCount.classList.add('counter-red')
@@ -59,7 +59,7 @@
 			});
 
 			const initialLength = textArea.value.length;
-			charCount.textContent = `Characters remaining: ${maxLength - initialLength}`;
+			charCount.textContent = `characters remaining: ${maxLength - initialLength}`;
 		}
 	}
 	call()

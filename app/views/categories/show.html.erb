@@ -8,42 +8,31 @@
 
 
     <div class="colored-bg-wrapper">
-			<div class="colored-bg-flex">
-
-				<div class="colored-bg">
-					<div class="cat-pro">
-						<div class="category-inner">
-							<div class="category-flex">
-								<h2 class="mb-1 md-heading">
-									<%= @category.name.capitalize %>
-								</h2>
-								<p class="mb-0 light-text">
-									<%= local_time(@category.created_at, "%d %b %Y") %>
-								</p>
-							</div>
-						</div>
+			<div class="colored-bg">
+				<div class="cat-pro">
+					<div class="category-inner">
 						<div class="category-flex">
 							<h2 class="mb-1 md-heading">
-								Spent
+								<%= @category.name.capitalize %>
 							</h2>
-							<span class="red-text bold-text">
-								<% if @category.total_amount > 1 %>
-									<h3 class="md-heading red-text bold-text"> <%= number_to_currency(@category.total_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
-								<% else %>
-									<h3 class="md-heading black-text bold-text"><%= number_to_currency(@category.total_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
-								<% end %>
-							</span>
+							<p class="mb-0 light-text">
+								<%= local_time(@category.created_at, "%d %b %Y") %>
+							</p>
 						</div>
+					</div>
+					<div class="category-flex">
+						<h2 class="mb-1 md-heading">
+							Spent
+						</h2>
+						<span class="red-text bold-text">
+							<% if @category.total_amount > 1 %>
+								<h3 class="md-heading red-text bold-text"> <%= number_to_currency(@category.total_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
+							<% else %>
+								<h3 class="md-heading black-text bold-text"><%= number_to_currency(@category.total_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
+							<% end %>
+						</span>
 					</div>
 				</div>
-				<%= link_to edit_category_path(@category), method: 'get' do %>
-					<div class="cat-second-inner-grid edit-class">
-						<div class="add-icon">
-							<div><%= fa_icon "plus", class: 'link-icon' %></div>
-						</div>
-						<h3 class="md-heading">Edit</h3>
-					</div>
-				<% end %>
 			</div>
 
 			<div class="search-card">
@@ -57,17 +46,26 @@
 						</div>
 					<% end %>
 				</div>
-				<div class="">
-					<%= form_tag(category_path(@category), method: :get) do %>
-						<div class="search-form-grid">
-							<div class="group">
-								<%= text_field_tag(:search, params[:search], placeholder: "Search products", class: "search-input") %>
-							</div>
-							<%= submit_tag("Search", class: "signup-btn") %>
+				<%= link_to edit_category_path(@category), method: 'get' do %>
+					<div class="cat-second-inner-grid edit-class">
+						<div class="add-icon">
+							<div><%= fa_icon "plus", class: 'link-icon' %></div>
 						</div>
-					<% end %>
-				</div>
+						<h3 class="md-heading">Edit</h3>
+					</div>
+				<% end %>
+			</div>
 
+			<div class="search-card-wrap">
+				<%= form_tag(category_path(@category), method: :get) do %>
+					<div class="search-form-grid">
+						<div class="group">
+							<%= text_field_tag(:search, params[:search], placeholder: "Search products", class: "search-input") %>
+						</div>
+						<%= submit_tag("Search", class: "search-btn", name: nil) %>
+					</div>
+				<% end %>
+				<div class="search-btn all-btn"><%= link_to 'All', category_path(@category), class: 'white-text'%></div>
 			</div>
 		</div>
 		

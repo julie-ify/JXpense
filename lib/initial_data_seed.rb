@@ -10,7 +10,7 @@ class InitialDataSeed
   def create_data
     user = User.create!({ name: 'test user', email: 'testuser@gmail.com', password: 'testuser',
                           password_confirmation: 'testuser' })
-    Budget.create(user_id: user.id, local_amount: 10_000, exchange_rate_id: 6)
+    Budget.create(user_id: user.id, local_amount: 10_000, exchange_rate_id: 2)
 
     Category.create!([{ name: 'Internet', user_id: 1, created_at: 1.day.ago },
                       { name: 'Airtime', user_id: 1, created_at: 1.day.ago },
