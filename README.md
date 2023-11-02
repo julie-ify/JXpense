@@ -1,6 +1,4 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
-# Budget-app project
+# JXpense project
 
 > JXpense is a ruby on rails mobile web-based application that helps you keep track of your expenses and income. No install required, and very user friendly.
 
