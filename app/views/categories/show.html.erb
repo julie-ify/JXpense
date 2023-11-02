@@ -1,0 +1,111 @@
+<section class="page-position" >
+  <div>
+		<div class="close">
+			<%= link_to authenticated_root_path do %>
+				<i class="fas fa-arrow-left"></i>
+			<% end %>
+		</div>
+
+
+    <div class="colored-bg-wrapper">
+			<div class="colored-bg">
+				<div class="cat-pro">
+					<div class="category-inner">
+						<div class="category-flex">
+							<h2 class="mb-1 md-heading">
+								<%= @category.name.capitalize %>
+							</h2>
+							<p class="mb-0 light-text">
+								<%= local_time(@category.created_at, "%d %b %Y") %>
+							</p>
+						</div>
+					</div>
+					<div class="category-flex">
+						<h2 class="mb-1 md-heading">
+							Spent
+						</h2>
+						<span class="red-text bold-text">
+							<% if @category.total_amount > 1 %>
+								<h3 class="md-heading red-text bold-text"> <%= number_to_currency(@category.total_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
+							<% else %>
+								<h3 class="md-heading black-text bold-text"><%= number_to_currency(@category.total_amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %></h3>
+							<% end %>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="search-card">
+				<div class="cat-second-grid">
+					<%= link_to new_category_product_path(@category.id) do %>
+						<div class="cat-second-inner-grid">
+							<div class="add-icon">
+								<div><%= fa_icon "plus", class: 'link-icon' %></div>
+							</div>
+							<h3 class="md-heading">Add Product</h3>
+						</div>
+					<% end %>
+				</div>
+				<%= link_to edit_category_path(@category), method: 'get' do %>
+					<div class="cat-second-inner-grid edit-class">
+						<div class="add-icon">
+							<div><%= fa_icon "plus", class: 'link-icon' %></div>
+						</div>
+						<h3 class="md-heading">Edit</h3>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="search-card-wrap">
+				<%= form_tag(category_path(@category), method: :get) do %>
+					<div class="search-form-grid">
+						<div class="group">
+							<%= text_field_tag(:search, params[:search], placeholder: "Search products", class: "search-input") %>
+						</div>
+						<%= submit_tag("Search", class: "search-btn", name: nil) %>
+					</div>
+				<% end %>
+				<div class="search-btn all-btn"><%= link_to 'All', category_path(@category), class: 'white-text'%></div>
+			</div>
+		</div>
+		
+    <% if @products.empty? %>
+      <p class="text-center fs-5 my-5 sm-heading">There are no products yet!</p>
+    <% end %>
+		<% @products_group.each do |created_at, products| %>
+			<div class="date-format">
+				<p class="mb-0 light-text">
+					<%= created_at.strftime("%d %b %Y") %>
+				</p>
+			</div>
+
+			<ul>
+			<% products.each do |product| %>
+        <li>
+          <div class="product-wrapper">
+            <div class="product-card">
+              <div class="bold-text">
+                <%= product.name.capitalize %>
+              </div>
+              <div class="light-text">
+							<%= local_time(product.created_at, "%l:%M%P") %>
+              </div>
+              <div class="red-text bold-text md-heading">
+							<%= number_to_currency(product.amount, unit: @currency_details.symbol, delimiter: ',', precision: 2) %>
+              </div>
+            </div>
+						<div class="description-wrapper">
+							<p class= "word-wrap"><%= product.description %></p>
+						</div>
+            <div class="reset">
+              <p><%= link_to 'Edit', edit_category_product_path(@category.id, product.id), method: 'get', class: "my-4 product-link pe-2" %></p>
+              <p><%= link_to 'Remove', category_product_path(@category.id, product.id), method: 'delete', data: { confirm: 'Are you sure?' }, class: "my-4 product-link" %></p>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+		<% end %>
+  </div>
+</section>
+

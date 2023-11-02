@@ -1,0 +1,35 @@
+class ExchangeRatesSeed
+
+  CURRENCIES = [
+    'NGN', 'GBP', 'CAD', 'EUR', 'AUD', 'USD'
+  ]
+
+  def self.execute
+    new.execute
+  end
+
+  def execute
+    create_currencies(CURRENCIES)
+  end
+
+  def create_currencies(currencies)
+    currencies.each do |currency|
+			case currency
+			when 'NGN'
+				ExchangeRate.find_or_create_by(currency: currency, rate_in_usd: 465)
+			when 'GBP'
+				ExchangeRate.find_or_create_by(currency: currency, rate_in_usd: 0.81)
+			when 'CAD'
+				ExchangeRate.find_or_create_by(currency: currency, rate_in_usd: 1.35)
+			when 'EUR'
+				ExchangeRate.find_or_create_by(currency: currency, rate_in_usd: 0.92)
+			when 'AUD'
+				ExchangeRate.find_or_create_by(currency: currency, rate_in_usd: 1.50)
+			when 'USD'
+				ExchangeRate.find_or_create_by(currency: currency, rate_in_usd: 1)
+			else
+				currency
+			end
+		end
+  end
+end

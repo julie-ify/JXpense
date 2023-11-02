@@ -18,5 +18,8 @@ module BudgetApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+		
+		# Custom directories with classes and modules you want to be autoloadable.
+		config.autoload_paths << "#{Rails.root}/lib"
   end
 end

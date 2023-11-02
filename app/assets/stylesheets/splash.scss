@@ -1,0 +1,78 @@
+// Place all the styles related to the splash controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.splash-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	gap: 20px;
+	padding-top: 40px;
+}
+
+
+.bg-heading {
+  color: var(--black-color);
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+}
+
+.img-width {
+  width: 40%;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.svg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	gap: 25px;
+}
+
+.side {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.main-splash {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+.txt-bg-color  {
+  font-size: 20px;
+  background-color: var(--blue-color);
+  padding: 10px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  color: var(--white-color);
+  border: 1px solid var(--blue-color);
+  transition: all 0.2s ease-out;
+}
+
+.txt-bg-color:hover {
+  border: 1px solid var(--blue-color);
+  background-color: var(--bg-color);
+  color: var(--blue-color);
+}
+
+.txt-bg {
+  font-size: 20px;
+  padding: 10px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: var(--bg-color);
+  color: var(--blue-color);
+  border: 1px solid var(--blue-color);
+  transition: all 0.2s ease-out;
+}
+
+.txt-bg:hover {
+  border: 1px solid var(--blue-color);
+  color: var(--white-color);
+  background-color: var(--blue-color);
+}

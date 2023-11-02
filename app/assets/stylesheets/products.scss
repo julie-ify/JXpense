@@ -1,0 +1,49 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.product-amount {
+  background-color: var(--bg-card);
+  padding: 1rem 0;
+  margin-top: 0;
+}
+
+.product-card {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  align-items: center;
+	flex-wrap: wrap;
+}
+
+.product-wrapper {
+	margin: 0 0;
+	display: flex;
+	flex-direction: column;
+	padding: 15px 0;
+	border-bottom: 1px solid rgba($color: #ccc, $alpha: 0.155);
+	row-gap: 1rem;
+}
+
+.date-flex {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 25px;
+  row-gap: 20px;
+}
+
+.description-wrapper {
+	word-wrap: break-word;
+}
+
+.word-wrap {
+	word-break: break-all;
+	font-size: 13px;
+}
+
+a.product-link {
+	color: rgba($color: #555e77, $alpha: 0.8);
+	font-size: 12px;
+	font-weight: 400;
+	text-decoration: underline;
+}
