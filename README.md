@@ -4,7 +4,7 @@
 
 # Live Link
 
-Click [here](https://budget-app-ulsh.onrender.com/) to view the website online.
+Click [here](https://jxspense.onrender.com/) to view the website online.
 
 # Screenshots
 
@@ -16,9 +16,9 @@ Click [here](https://budget-app-ulsh.onrender.com/) to view the website online.
 
 To get a local copy up and running follow these simple steps.
 
-- You can clone this repo by typing `git clone https://github.com/julie-ify/Budget-app.git` on your terminal.
+- You can clone this repo by typing `git clone git@github.com:julie-ify/JXpense.git` on your terminal.
 
-- Type `cd Budget-app` to access the project on the terminal.
+- Type `cd JXpense` to access the project on the terminal.
 - Open the project in your code editor
 - Run `bundle install` to install all the required gems
 - Run `rake db:setup` to setup your database
@@ -69,7 +69,7 @@ If you would like to test the app using a test user account which has seed data
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/julie-ify/Budget-app/issues).
+Feel free to check the [issues page](https://github.com/julie-ify/JXpense/issues).
 
 # Show your support
 
