@@ -3,6 +3,6 @@
 set -o errexit
 
 bundle install
-./bin/rails assets:precompile
-./bin/rails assets:clean
-./bin/rails db:drop db:create db:migrate db:seed
+rails assets:precompile
+rails assets:clean
+rails db:drop db:create db:migrate db:seed
