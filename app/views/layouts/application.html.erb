@@ -12,14 +12,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <% if notice %>
-      <p class="alert alert-success text-center flot mb-3"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger text-center flot mb-3"><%= alert %></p>
-    <% end %>
-		<div class="App-container"><div class="App-wrapper"><%= yield %></div></div>
+		<div class="App-container">
+			<div class="App-wrapper">
+				<% if notice %>
+					<p class="alert alert-success text-center flot mb-3"><%= notice %></p>
+				<% end %>
+				<% if alert %>
+					<p class="alert alert-danger text-center flot mb-3"><%= alert %></p>
+				<% end %>
+				<%= yield %>
+			</div>
+		</div>
   </body>
 </html>

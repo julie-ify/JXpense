@@ -52,14 +52,18 @@ body {
 .App-container {
 	width: 100vw;
 	min-height: 100vh;
-	background-color: #fff;
+	background-color: var(--white-color);
 	padding: 0 20px;
 }
 
 .App-wrapper {
 	max-width: 576px;
-	background-color: #fff;
+	min-height: 100vh;
+	padding: 0 20px;
 	margin: 0 auto;
+	background-color: var(--bg-color);
+	box-shadow: -1px 0 8px rgba(0, 0, 0, 0.05), 1px 0 8px rgba(0, 0, 0, 0.05);
+	overflow: hidden;
 }
 
 .dp-flex {
@@ -249,7 +253,6 @@ input::placeholder {
 
 .black-text {
 	color: var(--black-color);
-	/* font-size: 12px; */
 }
 
 .logout-text {
