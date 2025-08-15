@@ -49,6 +49,8 @@ If you would like to test the app using a test user account which has seed data
 
 - Bootstrap CSS Framework
 
+- SCSS
+
 - Device
 
 - Cancancan
@@ -63,7 +65,6 @@ If you would like to test the app using a test user account which has seed data
 
 - GitHub: [juliana-Ifionu](https://github.com/julie-ify)
 - LinkedIn: [Juliana Ifionu](https://www.linkedin.com/in/julianaifionu/)
-- Twitter: [Juliana Ifionu](https://twitter.com/juliana_ifionu)
 
 # 🤝 Contributing
 
