@@ -4,7 +4,7 @@
 
 # Live Link
 
-Click [here](https://jxspense.onrender.com/) to view the website online.
+Click [here](https://jxpense.onrender.com/) to view the website online.
 
 # Screenshots
 
