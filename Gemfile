@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem 'nokogiri', '1.12.5'
+gem "nokogiri", ">= 1.14"
 
 # Use to get user's local time instead of UTC
 gem 'local_time'
